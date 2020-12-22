@@ -45,7 +45,22 @@ ol.actsLI ul {
 #showMe{
     display:none;
 }
-  
+
+.grid-container {
+	display: grid;
+	grid-template-columns: auto auto;
+
+}
+.trials-container {
+	columns: 2;
+	text-align: left;
+}
+
+.trials-container ul {
+	list-style-type: none;
+}
+
+
 
 /*
 	User Added End
