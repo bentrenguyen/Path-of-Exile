@@ -37,6 +37,11 @@ ol.actsLI li {
 	padding-left:1em;
 }
 
+ol.actsLI ul {
+	margin-bottom: 0em;
+	padding-bottom: 0em;
+}
+
 #showMe{
     display:none;
 }
