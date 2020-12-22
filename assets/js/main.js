@@ -76,11 +76,18 @@
 // User added below
 
 $(document).ready(function() {
-	$("select").change(function() {
+	// leveling guide
+	$("#actDropdown").change(function() {
 	  var act = $(this).val();
 	  $(".actsDiv").not(act).hide();
 	  $(act).show();
 	});  
+	// watchstone guide
+	$("#watchstoneDropdown").change(function() {
+		var step = $(this).val();
+		$(".watchstoneDiv").not(step).hide();
+		$(step).show();
+	  });  
   });
 
   //Get the button:

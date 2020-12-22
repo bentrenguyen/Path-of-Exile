@@ -26,6 +26,14 @@ ul.bookmarkList {
 	margin-bottom: 1em;
 }
 
+#watchstoneMajor {
+	margin-bottom: 1em;
+}
+
+#watchstoneDropdownDiv {
+	margin-bottom: 1em;
+}
+
 .actsLI {
 	text-align: left;
 	columns: 2;
@@ -61,6 +69,10 @@ ol.actsLI ul {
 }
 
 #actDropdown {
+	width: 25%;
+}
+
+#watchstoneDropdown {
 	width: 25%;
 }
 
