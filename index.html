@@ -10,6 +10,8 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="icon" type="image/png" href="images/poeIcon.png">
+
 	</head>
 	<body class="landing">
 
@@ -47,7 +49,7 @@
 			</section>
 
 			<!-- One -->
-				<section id="bookmarks" class="wrapper style1 special">
+				<section id="bookmarks" class="wrapper style1">
 					<div class="container">
 						<header class="major">
 							<h2>Bookmarks</h2>
@@ -64,14 +66,14 @@
 				</section>
 
 			<!-- Two -->
-				<section id="lvl" class="wrapper style2 special">
+				<section id="lvl" class="wrapper style2">
 					<div class="container">
 						<header id="lvlMajor" class="major">
 							<h2>Leveling info</h2>
 							<p>Step by step guide through the acts</p>
 						</header>
-						<div id="actDropdown" class="container 25%">
-							<select class="75%" name="acts" id="acts">
+						<div id="actDropdownDiv" class="container">
+							<select class="75%" name="acts" id="actDropdown">
 								<option value="#act1">Act 1</option>
 								<option value="#act2">Act 2</option>
 								<option value="#act3">Act 3</option>
@@ -882,19 +884,267 @@
 					</div>
 				</section>
 
-			<!-- Four 
-				<section id="four" class="wrapper style3 special">
-					<div class="container">
-						<header class="major">
-							<h2>Aenean elementum ligula</h2>
-							<p>Feugiat sed lorem ipsum magna</p>
-						</header>
-						<ul class="actions">
-							<li><a href="#" class="button special big">Get in touch</a></li>
-						</ul>
+			<!-- Four -->
+			<section id="pantheon" class="wrapper style1">
+				<div class="container">
+					<header class="major">
+						<h2>Pantheon info</h2>
+						<p>Details and upgrade maps</p>
+					</header>
+					<div id="pantheonDiv" class="container">
+						<h4>Major gods</h4>
+							<div class="table-wrapper">
+								<table class="pantheonTable">
+									<colgroup>
+										<col style="width:10%">
+										<col style="width:30%">
+										<col style="width:30%">
+									</colgroup>
+									<thead>
+										<tr>
+											<th>Name</th>
+											<th>Effect(s)</th>
+											<th>Upgrade</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>Soul of Lunaris</td>
+											<td>
+												1% additional Physical Damage Reduction for each
+												nearby Enemy, up to 8%
+												<br>
+												1% increased Movement Speed for each
+												nearby Enemy, up to 8%
+											</td>
+											<td>
+												Capture<span style="color: indianred;"> <span style="color: indianred;">Ancient Architect</span> </span>in<span style="color: slateblue;"> Pier Map</span>
+												<br>
+												10% chance to avoid Projectiles
+												<br>
+												Capture<span style="color: indianred;"> Shock and Horror </span>in<span style="color: slateblue;"> Mineral Pools Map</span>
+												<br>
+												5% chance to Dodge Attack and Spell Hits if you've
+												been Hit Recently
+												<br>
+												Capture<span style="color: indianred;"> The Hallowed Husk </span>in<span style="color: slateblue;"> Palace Map</span>
+												<br>
+												Avoid Projectiles that have Chained
+											</td>
+										</tr>
+										<tr>
+											<td>Soul of Arakaali</td>
+											<td>
+												5% reduced Damage taken from Damage Over Time
+												<br>
+												10% chance to Avoid Lightning Damage from Hits
+											</td>
+											<td>
+												Capture<span style="color: indianred;"> Queen of the Great Tangle </span>in<span style="color: slateblue;"> Jungle Valley Map</span>
+												<br>
+												50% increased Recovery rate of Life and Energy Shield if you've stopped taking Damage Over Time Recently
+												<br>
+												Capture<span style="color: indianred;"> Shavronne the Sickening </span>in<span style="color: slateblue;"> Cells Map</span>
+												<br>
+												30% reduced Effect of Shock on you
+												<br>
+												30% reduced Shock Duration on you
+												<br>
+												Capture<span style="color: indianred;"> Thraxia </span>in<span style="color: slateblue;"> Spider Lair Map</span>
+												<br>
+												+25% Chaos Resistance against Damage Over Time
+											</td>
+										</tr>
+										<tr>
+											<td>Soul of Solaris</td>
+											<td>
+												6% additional Physical Damage Reduction while there
+												is only one nearby Enemy
+												<br>
+												20% chance to take 50% less Area Damage from Hits
+											</td>
+											<td>
+												Capture<span style="color: indianred;"> Vision of Justice </span>in<span style="color: slateblue;"> Orchard Map</span>
+												<br>
+												8% reduced Elemental Damage taken if you haven't
+												been Hit Recently
+												<br>
+												Capture<span style="color: indianred;"> Eater of Souls </span>in<span style="color: slateblue;"> Core Map</span>
+												<br>
+												Take no Extra Damage from Critical Strikes if you have taken a Critical Strike Recently
+												<br>
+												Capture<span style="color: indianred;"> Kitava, The Destroyer </span>in<span style="color: slateblue;"> Lava Lake Map</span>
+												<br>
+												50% chance to avoid Ailments from Critical Strikes
+											</td>
+										</tr>
+										<tr>
+											<td>Soul of the Brine King</td>
+											<td>
+												You cannot be Stunned if you've been Stunned or Blocked a Stunning Hit in the past 2 seconds
+											</td>
+											<td>
+												Capture<span style="color: indianred;"> Glace </span>in<span style="color: slateblue;"> Beach Map</span>
+												<br>
+												30% increased Stun and Block Recovery
+												<br>
+												Capture<span style="color: indianred;"> Champion of the Hollows </span>in<span style="color: slateblue;"> Crystal Ore Map</span>
+												<br>
+												You cannot be Frozen if you've been Frozen Recently
+												<br>
+												Capture<span style="color: indianred;"> Fragment of Winter </span>in<span style="color: slateblue;"> Waterways Map</span>
+												<br>
+												50% reduced Effect of Chill on you
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						<h4>Minor gods</h4>
+							<div class="table-wrapper">
+								<table class="pantheonTable"
+									<colgroup>
+										<col style="width:10%">
+										<col style="width:30%">
+										<col style="width:30%">
+									</colgroup>
+									<thead>
+										<tr>
+											<th id="pantheon1">Name</th>
+											<th id="pantheon2">Effect(s)</th>
+											<th id="pantheon3">Upgrade</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>
+												Soul of Yugul
+											</td>
+											<td>
+												You and your Minions take 25% reduced Reflected Damage
+												<br>
+												50% chance to Reflect Enemy Chills and Freezes
+											</td>
+											<td>
+												Capture<span style="color: indianred;"> Varhesh, Shimmering Aberration </span>in<span style="color: slateblue;"> Terrace Map</span>
+												<br>
+												5% reduced Cold Damage taken if you've been Hit Recently
+											</td>
+										</tr>
+										<tr>
+											<td>
+												Soul of Ralakesh
+											</td>
+											<td>
+												25% reduced Physical Damage over Time Damage taken while moving
+												<br>
+												25% chance to avoid Bleeding
+											</td>
+											<td>
+												Capture<span style="color: indianred;"> Drek, Apex Hunter </span>in<span style="color: slateblue;"> Fields Map</span>
+												<br>
+												Cannot be Blinded
+												<br>
+												You cannot be Maimed
+											</td>
+										</tr>
+										<tr>
+											<td>
+												Soul of Shakari
+											</td>
+											<td>
+												5% reduced Chaos Damage taken
+												<br>
+												25% reduced Chaos Damage over Time taken while on Caustic Ground
+											</td>
+											<td>
+												Capture<span style="color: indianred;"> Terror of the Infinite Drifts </span>in<span style="color: slateblue;"> Desert Spring Map</span>
+												<br>
+												50% less Duration of Poisons on You
+												<br>
+												You cannot be Poisoned while there are at least 5 Poisons on you
+											</td>
+										</tr>
+										<tr>
+											<td>
+												Soul of Abberath
+											</td>
+											<td>
+												5% reduced Fire Damage taken while moving
+												<br>
+												Unaffected by Burning Ground
+											</td>
+											<td>
+												Capture<span style="color: indianred;"> Mephod, the Earth Scorcher </span>in<span style="color: slateblue;"> Summit Map</span>
+												<br>
+												50% reduced Ignite Duration on you
+												<br>
+												10% increased Movement Speed while on Burning Ground
+											</td>
+										</tr>
+										<tr>
+											<td>
+												Soul of Tukohama
+											</td>
+											<td>
+												While stationary, gain 2% additional Physical Damage Reduction every second, up to a maximum of 8%
+											</td>
+											<td>
+												Capture<span style="color: indianred;"> Tahsin, Warmaker </span>in<span style="color: slateblue;"> Siege Map</span>
+												<br>
+												While stationary, gain 0.5% of Life Regenerated per second every second, up to a maximum of 2%
+											</td>
+										</tr>
+										<tr>
+											<td>
+												Soul of Ryslatha
+											</td>
+											<td>
+												Life Flasks gain 3 Charges every 3 seconds if you haven't used a Life Flask Recently
+											</td>
+											<td>
+												Capture<span style="color: indianred;"> Gorulis, Will-Thief </span>in<span style="color: slateblue;"> Infested Valley Map</span>
+												<br>
+												60% increased Life Recovery from Flasks used when on Low Life
+											</td>
+										</tr>
+										<tr>
+											<td>
+												Soul of Garukhan
+											</td>
+											<td>
+												+5% chance to Evade Attack Hits if you've
+												taken a Savage Hit Recently
+											</td>
+											<td>
+												Capture<span style="color: indianred;"> Stalker of the Endless Dunes </span>in<span style="color: slateblue;"> Dig Map</span>
+												<br>
+												6% increased Movement Speed if you haven't been Hit Recently
+											</td>
+										</tr>
+										<tr>
+											<td>
+												Soul of Gruthkul
+											</td>
+											<td>
+												1% additional Physical Damage Reduction for each Hit you've taken Recently up to a maximum of 5%
+											</td>
+											<td>
+												Capture<span style="color: indianred;"> Erebix, Light's Bane </span>in<span style="color: slateblue;"> Cemetery Map</span>
+												<br>
+												Enemies that have Hit you with an Attack Recently have 8% reduced Attack Speed
+												
+											</td>
+										</tr>
+
+									</tbody>
+								</table>
+							</div>
 					</div>
-				</section>
--->
+				</div>
+			</section>
+
+			<!-- Five -->
 				<section id="uberlab" class="wrapper style2">
 					<div class="container">
 						<header class="major">
@@ -907,8 +1157,22 @@
 						</div>
 					</div>
 				</section>
+			
+			<!-- Five -->
+				<section id="pantheon" class="wrapper style1">
+					<div class="container">
+						<header class="major">
+							<h2>Pantheon info</h2>
+							<p>Details and upgrade maps</p>
+						</header>
+						<div id="pantheonDiv" class="container">
+							
+						</div>
+					</div>
+				</section>
 
-		<a onclick="topFunction()" id="myBtn" style="border:1px" title="Go to top">&#8679;</button>
+			<!-- To-Top Button -->
+				<a onclick="topFunction()" id="myBtn" style="border:1px" title="Go to top">&#8679;</button>
 
 		<!-- Footer -->
 			<footer id="footer">

@@ -60,6 +60,13 @@ ol.actsLI ul {
 	list-style-type: none;
 }
 
+#actDropdown {
+	width: 25%;
+}
+
+
+
+
 #myBtn {
 	display: none; /* Hidden by default */
 	position: fixed; /* Fixed/sticky position */
@@ -96,6 +103,16 @@ text-decoration-color: #262429;
 	margin-bottom: -142px;
 	margin-left: -50px;
 
+}
+
+.pantheonTable {
+	table-layout: fixed;
+}
+
+
+
+.pantheonTable>tbody>tr{
+	font-size: 14px;
 }
 
 /*
