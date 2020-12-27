@@ -120,12 +120,20 @@ function check() {
 
 document.getElementById("skillGemInput").addEventListener('keyup', event => {
 	if (event.code == "Enter") {
-		var inputValue = $("#search").val().replace(/\./g, "");
-		$(".element").each(function() {
-			if ($(this).attr("id") == inputValue) {
-			   $('html,body').animate({
+		var gemInputText = document.getElementById("skillGemInput").value;
+		var gemInputText = gemInputText.replace(" ", "");
+		$(".gemItem").each(function() {
+			if ($(this).attr("id") == gemInputText) {
+				window.find(gemInputText);
+				var myElement = document.getElementById(gemInputText);
+				var topPos = myElement.offsetTop;
+				alert(topPos);
+				document.getElementById(gemInputText).scrollTop = topPos;
+				/*
+			   $(".gemItem").animate({
 				   scrollTop: $(this).offset().top
 			   });
+			   */
 			}
 		});
 	}
