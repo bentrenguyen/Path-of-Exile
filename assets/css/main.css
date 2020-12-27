@@ -30,6 +30,10 @@ ul.bookmarkList {
 	margin-bottom: 1em;
 }
 
+#gemMajor {
+	margin-bottom: 1em;
+}
+
 #watchstoneDropdownDiv {
 	margin-bottom: 1em;
 }
@@ -127,6 +131,24 @@ text-decoration-color: #262429;
 	font-size: 14px;
 }
 
+div.textbox {
+	background-color: #ececec;
+	height: 30em;
+	width: 15em;  
+	overflow-x: hidden;
+	overflow-y: scroll;
+	border: solid;
+	border-width: 1px;
+	border-color: #aaa;
+}
+
+.gemItem {
+	margin: 1em;
+}
+
+#skillGemInput {
+	width: 15em;
+}
 /*
 	User Added End
 */

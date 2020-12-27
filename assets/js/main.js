@@ -117,3 +117,16 @@ $(document).ready(function() {
 function check() {
 	$("#contentDiv").load('generic.html #notesImg');
 }
+
+document.getElementById("skillGemInput").addEventListener('keyup', event => {
+	if (event.code == "Enter") {
+		var inputValue = $("#search").val().replace(/\./g, "");
+		$(".element").each(function() {
+			if ($(this).attr("id") == inputValue) {
+			   $('html,body').animate({
+				   scrollTop: $(this).offset().top
+			   });
+			}
+		});
+	}
+  })
