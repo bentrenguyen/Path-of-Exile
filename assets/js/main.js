@@ -137,4 +137,38 @@ document.getElementById("skillGemInput").addEventListener('keyup', event => {
 			}
 		});
 	}
-  })
+})
+
+function gemAddRow(table, gemName) {
+	var tableRef = document.getElementById(table);
+	var newRow = tableRef.insertRow(-1);
+
+	var newCell  = newRow.insertCell(0);
+	var newElem = document.createElement("P");
+	newElem.innerText = gemName;
+	newCell.appendChild(newElem);
+
+	var newCell  = newRow.insertCell(1);
+	var newElem = document.createElement("P");
+	// look up level req from JSON
+	newElem.innerText = "12";
+	newCell.appendChild(newElem);
+
+	var newCell  = newRow.insertCell(2);
+	var newElem = document.createElement("P");
+	// look up quest reward from JSON
+	newElem.innerText = "The Bring King";
+	newCell.appendChild(newElem);
+
+	newCell = newRow.insertCell(3);
+	newElem = document.createElement('A');
+	newElem.innerText = "X";
+	newElem.setAttribute("onclick", 'deleteRow(this)')
+	newElem.setAttribute("style", "cursor:pointer; text-decoration: none;")
+	newCell.appendChild(newElem);
+}  
+
+function deleteRow(row) {
+	var p=row.parentNode.parentNode;
+	p.parentNode.removeChild(p);
+}

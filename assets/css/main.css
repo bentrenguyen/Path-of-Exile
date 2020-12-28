@@ -121,6 +121,16 @@ text-decoration-color: #262429;
 
 }
 
+.gemTable {
+	table-layout: fixed;
+}
+
+
+
+.gemTable>tbody>tr{
+	font-size: 14px;
+}
+
 .pantheonTable {
 	table-layout: fixed;
 }
@@ -171,6 +181,10 @@ div.textboxBig {
 
 #gemCol3 {
 	display: inline-block;
+}
+
+.gemItem {
+	cursor: pointer;
 }
 
 .gemTitle {

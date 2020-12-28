@@ -910,7 +910,7 @@
 								-->
 								<a class ="gemTitle">DEX Based</a> <br>
 								<div id="dexGems">
-									<a class="gemItem" id="AnimateWeapon">Animate Weapon</a> <br>
+									<a class="gemItem" id="AnimateWeapon" onclick="gemAddRow('gemInfoTable', this.id)">Animate Weapon</a> <br>
 									<a class="gemItem" id="ArcticArmour">Arctic Armour</a> <br>
 									<a class="gemItem" id="ArtilleryBallista">Artillery Ballista</a> <br>
 									<a class="gemItem" id="Barrage">Barrage</a> <br>
@@ -1354,22 +1354,24 @@
 								Gem Info
 							</h4>
 							<div class="textbox textboxBig" contenteditable="false">
-								<table class="pantheonTable">
+								<table id="gemInfoTable" class="gemTable">
 									<colgroup>
 										<col style="width:40%">
 										<col style="width:20%">
-										<col style="width:40%">
+										<col style="width:30%">
+										<col style="width:10%"
 									</colgroup>
 									<thead>
 										<tr>
 											<th>Gem Name</th>
 											<th>Lvl Req</th>
 											<th>Quest</th>
+											<th></th>
 										</tr>
 									</thead>
 									<tbody>
 										<tr>
-											<td>Animate Weapon</td>
+											<td><input type="text" name="links" /></td>
 											<td>8</td>
 											<td>The Brine King</td>
 										</tr>
@@ -1380,7 +1382,7 @@
 										</tr>
 									</tbody>
 								</table>
-								
+								<input type="submit" class="button" value="Add another line" onclick="gemAddRow('gemInfoTable', 'Animate Weapon')" />
 							</div>
 						</div>
 					</div>
