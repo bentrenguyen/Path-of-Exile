@@ -892,97 +892,553 @@
 						<p>Gem guide</p>
 					</header>
 					<div id="gemDiv">
-						
-						<h4>
-							Skill Gems
-						</h4>
-						<input id="skillGemInput" type="text">
-						<br>
-						<div class="textbox" contenteditable="false">
+						<div id="gemCol1">
+							<h4>
+								Skill Gems
+							</h4>
 							<!--
-							<a class="thumb" href="https://pathofexile.gamepedia.com/Added_Cold_Damage_Support" title="Added Cold Damage Support">
-							<img src="https://static.wikia.nocookie.net/pathofexile_gamepedia/images/3/39/Added_Cold_Damage_Support_inventory_icon.png" width="16px" height="16px" style="border:0; pointer-events: none"></img>
-							Added Cold Damage Support
-							</a>
+							<input id="skillGemInput" type="text">
+							<br>
 							-->
-							<a class="gemItem" id="AnimateWeapon">Animate Weapon</a> <br>
-							<a class="gemItem" id="ArcticArmour">Arctic Armour</a> <br>
-							<a class="gemItem" id="ArtilleryBallista">Artillery Ballista</a> <br>
-							<a class="gemItem" id="Barrage">Barrage</a> <br>
-							<a class="gemItem" id="BearTrap">Bear Trap</a> <br>
-							<a class="gemItem" id="BladeBlast">Blade Blast</a> <br>
-							<a class="gemItem" id="BladeFlurry">Blade Flurry</a> <br>
-							<a class="gemItem" id="BladeVortex">Blade Vortex</a> <br>
-							<a class="gemItem" id="Bladefall">Bladefall</a> <br>
-							<a class="gemItem" id="BlastRain">Blast Rain</a> <br>
-							<a class="gemItem" id="BlinkArrow">Blink Arrow</a> <br>
-							<a class="gemItem" id="BloodRage">Blood Rage</a> <br>
-							<a class="gemItem" id="BurningArrow">Burning Arrow</a> <br>
-							<a class="gemItem" id="CausticArrow">Caustic Arrow</a> <br>
-							<a class="gemItem" id="ChargedDash">Charged Dash</a> <br>
-							<a class="gemItem" id="CobraLash">Cobra Lash</a> <br>
-							<a class="gemItem" id="Cremation">Cremation</a> <br>
-							<a class="gemItem" id="Cyclone">Cyclone</a> <br>
-							<a class="gemItem" id="Dash">Dash</a> <br>
-							<a class="gemItem" id="Desecrate">Desecrate</a> <br>
-							<a class="gemItem" id="DetonateDead">Detonate Dead</a> <br>
-							<a class="gemItem" id="DoubleStrike">Double Strike</a> <br>
-							<a class="gemItem" id="DualStrike">Dual Strike</a> <br>
-							<a class="gemItem" id="ElementalHit">Elemental Hit</a> <br>
-							<a class="gemItem" id="EnsnaringArrow">Ensnaring Arrow</a> <br>
-							<a class="gemItem" id="EtherealKnives">Ethereal Knives</a> <br>
-							<a class="gemItem" id="ExplosiveArrow">Explosive Arrow</a> <br>
-							<a class="gemItem" id="ExplosiveTrap">Explosive Trap</a> <br>
-							<a class="gemItem" id="FireTrap">Fire Trap</a> <br>
-							<a class="gemItem" id="FlamethrowerTrap">Flamethrower Trap</a> <br>
-							<a class="gemItem" id="FlickerStrike">Flicker Strike</a> <br>
-							<a class="gemItem" id="Frenzy">Frenzy</a> <br>
-							<a class="gemItem" id="FrostBlades">Frost Blades</a> <br>
-							<a class="gemItem" id="GalvanicArrow">Galvanic Arrow</a> <br>
-							<a class="gemItem" id="Grace">Grace</a> <br>
-							<a class="gemItem" id="Haste">Haste</a> <br>
-							<a class="gemItem" id="Hatred">Hatred</a> <br>
-							<a class="gemItem" id="HeraldofAgony">Herald of Agony</a> <br>
-							<a class="gemItem" id="HeraldofIce">Herald of Ice</a> <br>
-							<a class="gemItem" id="IceShot">Ice Shot</a> <br>
-							<a class="gemItem" id="IceTrap">Ice Trap</a> <br>
-							<a class="gemItem" id="Lacerate">Lacerate</a> <br>
-							<a class="gemItem" id="LancingSteel">Lancing Steel</a> <br>
-							<a class="gemItem" id="LightningArrow">Lightning Arrow</a> <br>
-							<a class="gemItem" id="LightningStrike">Lightning Strike</a> <br>
-							<a class="gemItem" id="MirrorArrow">Mirror Arrow</a> <br>
-							<a class="gemItem" id="PestilentStrike">Pestilent Strike</a> <br>
-							<a class="gemItem" id="PhaseRun">Phase Run</a> <br>
-							<a class="gemItem" id="PlagueBearer">Plague Bearer</a> <br>
-							<a class="gemItem" id="Poacher'sMark">Poacher's Mark</a> <br>
-							<a class="gemItem" id="Precision">Precision</a> <br>
-							<a class="gemItem" id="Puncture">Puncture</a> <br>
-							<a class="gemItem" id="PurityofIce">Purity of Ice</a> <br>
-							<a class="gemItem" id="RainofArrows">Rain of Arrows</a> <br>
-							<a class="gemItem" id="Reave">Reave</a> <br>
-							<a class="gemItem" id="Riposte">Riposte</a> <br>
-							<a class="gemItem" id="ScourgeArrow">Scourge Arrow</a> <br>
-							<a class="gemItem" id="SeismicTrap">Seismic Trap</a> <br>
-							<a class="gemItem" id="ShatteringSteel">Shattering Steel</a> <br>
-							<a class="gemItem" id="ShrapnelBallista">Shrapnel Ballista</a> <br>
-							<a class="gemItem" id="SiegeBallista">Siege Ballista</a> <br>
-							<a class="gemItem" id="SmokeMine">Smoke Mine</a> <br>
-							<a class="gemItem" id="Sniper'sMark">Sniper's Mark</a> <br>
-							<a class="gemItem" id="SpectralShieldThrow">Spectral Shield Throw</a> <br>
-							<a class="gemItem" id="SpectralThrow">Spectral Throw</a> <br>
-							<a class="gemItem" id="SplitArrow">Split Arrow</a> <br>
-							<a class="gemItem" id="SummonIceGolem">Summon Ice Golem</a> <br>
-							<a class="gemItem" id="TemporalChains">Temporal Chains</a> <br>
-							<a class="gemItem" id="TornadoShot">Tornado Shot</a> <br>
-							<a class="gemItem" id="ToxicRain">Toxic Rain</a> <br>
-							<a class="gemItem" id="Unearth">Unearth</a> <br>
-							<a class="gemItem" id="VenomGyre">Venom Gyre</a> <br>
-							<a class="gemItem" id="ViperStrike">Viper Strike</a> <br>
-							<a class="gemItem" id="VolatileDead">Volatile Dead</a> <br>
-							<a class="gemItem" id="WhirlingBlades">Whirling Blades</a> <br>
-							<a class="gemItem" id="WildStrike">Wild Strike</a> <br>
-							<a class="gemItem" id="WitheringStep">Withering Step</a> <br>
-							
+	
+							<div class="textbox textbox1" contenteditable="false">
+								<!--
+								<a class="thumb" href="https://pathofexile.gamepedia.com/Added_Cold_Damage_Support" title="Added Cold Damage Support">
+								<img src="https://static.wikia.nocookie.net/pathofexile_gamepedia/images/3/39/Added_Cold_Damage_Support_inventory_icon.png" width="16px" height="16px" style="border:0; pointer-events: none"></img>
+								Added Cold Damage Support
+								</a>
+								-->
+								<a class ="gemTitle">DEX Based</a> <br>
+								<div id="dexGems">
+									<a class="gemItem" id="AnimateWeapon">Animate Weapon</a> <br>
+									<a class="gemItem" id="ArcticArmour">Arctic Armour</a> <br>
+									<a class="gemItem" id="ArtilleryBallista">Artillery Ballista</a> <br>
+									<a class="gemItem" id="Barrage">Barrage</a> <br>
+									<a class="gemItem" id="BearTrap">Bear Trap</a> <br>
+									<a class="gemItem" id="BladeBlast">Blade Blast</a> <br>
+									<a class="gemItem" id="BladeFlurry">Blade Flurry</a> <br>
+									<a class="gemItem" id="BladeVortex">Blade Vortex</a> <br>
+									<a class="gemItem" id="Bladefall">Bladefall</a> <br>
+									<a class="gemItem" id="BlastRain">Blast Rain</a> <br>
+									<a class="gemItem" id="BlinkArrow">Blink Arrow</a> <br>
+									<a class="gemItem" id="BloodRage">Blood Rage</a> <br>
+									<a class="gemItem" id="BurningArrow">Burning Arrow</a> <br>
+									<a class="gemItem" id="CausticArrow">Caustic Arrow</a> <br>
+									<a class="gemItem" id="ChargedDash">Charged Dash</a> <br>
+									<a class="gemItem" id="CobraLash">Cobra Lash</a> <br>
+									<a class="gemItem" id="Cremation">Cremation</a> <br>
+									<a class="gemItem" id="Cyclone">Cyclone</a> <br>
+									<a class="gemItem" id="Dash">Dash</a> <br>
+									<a class="gemItem" id="Desecrate">Desecrate</a> <br>
+									<a class="gemItem" id="DetonateDead">Detonate Dead</a> <br>
+									<a class="gemItem" id="DoubleStrike">Double Strike</a> <br>
+									<a class="gemItem" id="DualStrike">Dual Strike</a> <br>
+									<a class="gemItem" id="ElementalHit">Elemental Hit</a> <br>
+									<a class="gemItem" id="EnsnaringArrow">Ensnaring Arrow</a> <br>
+									<a class="gemItem" id="EtherealKnives">Ethereal Knives</a> <br>
+									<a class="gemItem" id="ExplosiveArrow">Explosive Arrow</a> <br>
+									<a class="gemItem" id="ExplosiveTrap">Explosive Trap</a> <br>
+									<a class="gemItem" id="FireTrap">Fire Trap</a> <br>
+									<a class="gemItem" id="FlamethrowerTrap">Flamethrower Trap</a> <br>
+									<a class="gemItem" id="FlickerStrike">Flicker Strike</a> <br>
+									<a class="gemItem" id="Frenzy">Frenzy</a> <br>
+									<a class="gemItem" id="FrostBlades">Frost Blades</a> <br>
+									<a class="gemItem" id="GalvanicArrow">Galvanic Arrow</a> <br>
+									<a class="gemItem" id="Grace">Grace</a> <br>
+									<a class="gemItem" id="Haste">Haste</a> <br>
+									<a class="gemItem" id="Hatred">Hatred</a> <br>
+									<a class="gemItem" id="HeraldofAgony">Herald of Agony</a> <br>
+									<a class="gemItem" id="HeraldofIce">Herald of Ice</a> <br>
+									<a class="gemItem" id="IceShot">Ice Shot</a> <br>
+									<a class="gemItem" id="IceTrap">Ice Trap</a> <br>
+									<a class="gemItem" id="Lacerate">Lacerate</a> <br>
+									<a class="gemItem" id="LancingSteel">Lancing Steel</a> <br>
+									<a class="gemItem" id="LightningArrow">Lightning Arrow</a> <br>
+									<a class="gemItem" id="LightningStrike">Lightning Strike</a> <br>
+									<a class="gemItem" id="MirrorArrow">Mirror Arrow</a> <br>
+									<a class="gemItem" id="PestilentStrike">Pestilent Strike</a> <br>
+									<a class="gemItem" id="PhaseRun">Phase Run</a> <br>
+									<a class="gemItem" id="PlagueBearer">Plague Bearer</a> <br>
+									<a class="gemItem" id="Poacher'sMark">Poacher's Mark</a> <br>
+									<a class="gemItem" id="Precision">Precision</a> <br>
+									<a class="gemItem" id="Puncture">Puncture</a> <br>
+									<a class="gemItem" id="PurityofIce">Purity of Ice</a> <br>
+									<a class="gemItem" id="RainofArrows">Rain of Arrows</a> <br>
+									<a class="gemItem" id="Reave">Reave</a> <br>
+									<a class="gemItem" id="Riposte">Riposte</a> <br>
+									<a class="gemItem" id="ScourgeArrow">Scourge Arrow</a> <br>
+									<a class="gemItem" id="SeismicTrap">Seismic Trap</a> <br>
+									<a class="gemItem" id="ShatteringSteel">Shattering Steel</a> <br>
+									<a class="gemItem" id="ShrapnelBallista">Shrapnel Ballista</a> <br>
+									<a class="gemItem" id="SiegeBallista">Siege Ballista</a> <br>
+									<a class="gemItem" id="SmokeMine">Smoke Mine</a> <br>
+									<a class="gemItem" id="Sniper'sMark">Sniper's Mark</a> <br>
+									<a class="gemItem" id="SpectralShieldThrow">Spectral Shield Throw</a> <br>
+									<a class="gemItem" id="SpectralThrow">Spectral Throw</a> <br>
+									<a class="gemItem" id="SplitArrow">Split Arrow</a> <br>
+									<a class="gemItem" id="SummonIceGolem">Summon Ice Golem</a> <br>
+									<a class="gemItem" id="TemporalChains">Temporal Chains</a> <br>
+									<a class="gemItem" id="TornadoShot">Tornado Shot</a> <br>
+									<a class="gemItem" id="ToxicRain">Toxic Rain</a> <br>
+									<a class="gemItem" id="Unearth">Unearth</a> <br>
+									<a class="gemItem" id="VenomGyre">Venom Gyre</a> <br>
+									<a class="gemItem" id="ViperStrike">Viper Strike</a> <br>
+									<a class="gemItem" id="VolatileDead">Volatile Dead</a> <br>
+									<a class="gemItem" id="WhirlingBlades">Whirling Blades</a> <br>
+									<a class="gemItem" id="WildStrike">Wild Strike</a> <br>
+									<a class="gemItem" id="WitheringStep">Withering Step</a> <br>
+								</div>
+								<br>
+								<a class ="gemTitle">STR Based</a> <br>
+								<div id="strGems">
+									<a class="gemItem" id="AncestralCry">Ancestral Cry</a> <br>
+									<a class="gemItem" id="AncestralProtector">Ancestral Protector</a> <br>
+									<a class="gemItem" id="AncestralWarchief">Ancestral Warchief</a> <br>
+									<a class="gemItem" id="Anger">Anger</a> <br>
+									<a class="gemItem" id="AnimateGuardian">Animate Guardian</a> <br>
+									<a class="gemItem" id="Berserk">Berserk</a> <br>
+									<a class="gemItem" id="Bladestorm">Bladestorm</a> <br>
+									<a class="gemItem" id="BloodandSand">Blood and Sand</a> <br>
+									<a class="gemItem" id="ChainHook">Chain Hook</a> <br>
+									<a class="gemItem" id="Cleave">Cleave</a> <br>
+									<a class="gemItem" id="ConsecratedPath">Consecrated Path</a> <br>
+									<a class="gemItem" id="DecoyTotem">Decoy Totem</a> <br>
+									<a class="gemItem" id="Determination">Determination</a> <br>
+									<a class="gemItem" id="DevouringTotem">Devouring Totem</a> <br>
+									<a class="gemItem" id="DominatingBlow">Dominating Blow</a> <br>
+									<a class="gemItem" id="DreadBanner">Dread Banner</a> <br>
+									<a class="gemItem" id="Earthquake">Earthquake</a> <br>
+									<a class="gemItem" id="Earthshatter">Earthshatter</a> <br>
+									<a class="gemItem" id="EnduringCry">Enduring Cry</a> <br>
+									<a class="gemItem" id="FleshandStone">Flesh and Stone</a> <br>
+									<a class="gemItem" id="General'sCry">General's Cry</a> <br>
+									<a class="gemItem" id="GlacialHammer">Glacial Hammer</a> <br>
+									<a class="gemItem" id="GroundSlam">Ground Slam</a> <br>
+									<a class="gemItem" id="HeavyStrike">Heavy Strike</a> <br>
+									<a class="gemItem" id="HeraldofAsh">Herald of Ash</a> <br>
+									<a class="gemItem" id="HeraldofPurity">Herald of Purity</a> <br>
+									<a class="gemItem" id="HolyFlameTotem">Holy Flame Totem</a> <br>
+									<a class="gemItem" id="IceCrash">Ice Crash</a> <br>
+									<a class="gemItem" id="ImmortalCall">Immortal Call</a> <br>
+									<a class="gemItem" id="InfernalBlow">Infernal Blow</a> <br>
+									<a class="gemItem" id="InfernalCry">Infernal Cry</a> <br>
+									<a class="gemItem" id="IntimidatingCry">Intimidating Cry</a> <br>
+									<a class="gemItem" id="LeapSlam">Leap Slam</a> <br>
+									<a class="gemItem" id="MoltenShell">Molten Shell</a> <br>
+									<a class="gemItem" id="MoltenStrike">Molten Strike</a> <br>
+									<a class="gemItem" id="Perforate">Perforate</a> <br>
+									<a class="gemItem" id="Pride">Pride</a> <br>
+									<a class="gemItem" id="Punishment">Punishment</a> <br>
+									<a class="gemItem" id="PurityofFire">Purity of Fire</a> <br>
+									<a class="gemItem" id="RallyingCry">Rallying Cry</a> <br>
+									<a class="gemItem" id="Reckoning">Reckoning</a> <br>
+									<a class="gemItem" id="RejuvenationTotem">Rejuvenation Totem</a> <br>
+									<a class="gemItem" id="SearingBond">Searing Bond</a> <br>
+									<a class="gemItem" id="SeismicCry">Seismic Cry</a> <br>
+									<a class="gemItem" id="ShieldCharge">Shield Charge</a> <br>
+									<a class="gemItem" id="ShockwaveTotem">Shockwave Totem</a> <br>
+									<a class="gemItem" id="Smite">Smite</a> <br>
+									<a class="gemItem" id="SplittingSteel">Splitting Steel</a> <br>
+									<a class="gemItem" id="StaticStrike">Static Strike</a> <br>
+									<a class="gemItem" id="Steelskin">Steelskin</a> <br>
+									<a class="gemItem" id="SummonFlameGolem">Summon Flame Golem</a> <br>
+									<a class="gemItem" id="SummonStoneGolem">Summon Stone Golem</a> <br>
+									<a class="gemItem" id="Sunder">Sunder</a> <br>
+									<a class="gemItem" id="Sweep">Sweep</a> <br>
+									<a class="gemItem" id="TectonicSlam">Tectonic Slam</a> <br>
+									<a class="gemItem" id="Vengeance">Vengeance</a> <br>
+									<a class="gemItem" id="VigilantStrike">Vigilant Strike</a> <br>
+									<a class="gemItem" id="Vitality">Vitality</a> <br>
+									<a class="gemItem" id="Vulnerability">Vulnerability</a> <br>
+									<a class="gemItem" id="WarBanner">War Banner</a> <br>
+									<a class="gemItem" id="Warlord'sMark">Warlord's Mark</a> <br>
+								</div>
+								<br>
+								<a class ="gemTitle">INT Based</a> <br>
+								<div id="intGems">
+									<a class="gemItem" id="Arc">Arc</a> <br>
+									<a class="gemItem" id="ArcaneCloak">Arcane Cloak</a> <br>
+									<a class="gemItem" id="ArcanistBrand">Arcanist Brand</a> <br>
+									<a class="gemItem" id="ArmageddonBrand">Armageddon Brand</a> <br>
+									<a class="gemItem" id="Assassin'sMark">Assassin's Mark</a> <br>
+									<a class="gemItem" id="BallLightning">Ball Lightning</a> <br>
+									<a class="gemItem" id="Bane">Bane</a> <br>
+									<a class="gemItem" id="BlazingSalvo">Blazing Salvo</a> <br>
+									<a class="gemItem" id="Blight">Blight</a> <br>
+									<a class="gemItem" id="Bodyswap">Bodyswap</a> <br>
+									<a class="gemItem" id="BoneOffering">Bone Offering</a> <br>
+									<a class="gemItem" id="BrandRecall">Brand Recall</a> <br>
+									<a class="gemItem" id="Clarity">Clarity</a> <br>
+									<a class="gemItem" id="ColdSnap">Cold Snap</a> <br>
+									<a class="gemItem" id="Conductivity">Conductivity</a> <br>
+									<a class="gemItem" id="Contagion">Contagion</a> <br>
+									<a class="gemItem" id="ConversionTrap">Conversion Trap</a> <br>
+									<a class="gemItem" id="Convocation">Convocation</a> <br>
+									<a class="gemItem" id="CracklingLance">Crackling Lance</a> <br>
+									<a class="gemItem" id="CreepingFrost">Creeping Frost</a> <br>
+									<a class="gemItem" id="DarkPact">Dark Pact</a> <br>
+									<a class="gemItem" id="Despair">Despair</a> <br>
+									<a class="gemItem" id="Discharge">Discharge</a> <br>
+									<a class="gemItem" id="Discipline">Discipline</a> <br>
+									<a class="gemItem" id="DivineIre">Divine Ire</a> <br>
+									<a class="gemItem" id="ElementalWeakness">Elemental Weakness</a> <br>
+									<a class="gemItem" id="Enfeeble">Enfeeble</a> <br>
+									<a class="gemItem" id="EssenceDrain">Essence Drain</a> <br>
+									<a class="gemItem" id="Fireball">Fireball</a> <br>
+									<a class="gemItem" id="Firestorm">Firestorm</a> <br>
+									<a class="gemItem" id="FlameDash">Flame Dash</a> <br>
+									<a class="gemItem" id="FlameSurge">Flame Surge</a> <br>
+									<a class="gemItem" id="FlameWall">Flame Wall</a> <br>
+									<a class="gemItem" id="Flameblast">Flameblast</a> <br>
+									<a class="gemItem" id="Flammability">Flammability</a> <br>
+									<a class="gemItem" id="FleshOffering">Flesh Offering</a> <br>
+									<a class="gemItem" id="FreezingPulse">Freezing Pulse</a> <br>
+									<a class="gemItem" id="FrostBomb">Frost Bomb</a> <br>
+									<a class="gemItem" id="FrostShield">Frost Shield</a> <br>
+									<a class="gemItem" id="FrostWall">Frost Wall</a> <br>
+									<a class="gemItem" id="Frostbite">Frostbite</a> <br>
+									<a class="gemItem" id="Frostblink">Frostblink</a> <br>
+									<a class="gemItem" id="Frostbolt">Frostbolt</a> <br>
+									<a class="gemItem" id="GlacialCascade">Glacial Cascade</a> <br>
+									<a class="gemItem" id="HeraldofThunder">Herald of Thunder</a> <br>
+									<a class="gemItem" id="Hexblast">Hexblast</a> <br>
+									<a class="gemItem" id="IceNova">Ice Nova</a> <br>
+									<a class="gemItem" id="IceSpear">Ice Spear</a> <br>
+									<a class="gemItem" id="IcicleMine">Icicle Mine</a> <br>
+									<a class="gemItem" id="Incinerate">Incinerate</a> <br>
+									<a class="gemItem" id="KineticBlast">Kinetic Blast</a> <br>
+									<a class="gemItem" id="KineticBolt">Kinetic Bolt</a> <br>
+									<a class="gemItem" id="LightningSpireTrap">Lightning Spire Trap</a> <br>
+									<a class="gemItem" id="LightningTendrils">Lightning Tendrils</a> <br>
+									<a class="gemItem" id="LightningTrap">Lightning Trap</a> <br>
+									<a class="gemItem" id="LightningWarp">Lightning Warp</a> <br>
+									<a class="gemItem" id="MagmaOrb">Magma Orb</a> <br>
+									<a class="gemItem" id="Malevolence">Malevolence</a> <br>
+									<a class="gemItem" id="OrbofStorms">Orb of Storms</a> <br>
+									<a class="gemItem" id="PenanceBrand">Penance Brand</a> <br>
+									<a class="gemItem" id="PowerSiphon">Power Siphon</a> <br>
+									<a class="gemItem" id="PurifyingFlame">Purifying Flame</a> <br>
+									<a class="gemItem" id="PurityofElements">Purity of Elements</a> <br>
+									<a class="gemItem" id="PurityofLightning">Purity of Lightning</a> <br>
+									<a class="gemItem" id="PyroclastMine">Pyroclast Mine</a> <br>
+									<a class="gemItem" id="RaiseSpectre">Raise Spectre</a> <br>
+									<a class="gemItem" id="RaiseZombie">Raise Zombie</a> <br>
+									<a class="gemItem" id="RighteousFire">Righteous Fire</a> <br>
+									<a class="gemItem" id="ScorchingRay">Scorching Ray</a> <br>
+									<a class="gemItem" id="ShockNova">Shock Nova</a> <br>
+									<a class="gemItem" id="SigilofPower">Sigil of Power</a> <br>
+									<a class="gemItem" id="SiphoningTrap">Siphoning Trap</a> <br>
+									<a class="gemItem" id="Soulrend">Soulrend</a> <br>
+									<a class="gemItem" id="Spark">Spark</a> <br>
+									<a class="gemItem" id="Spellslinger">Spellslinger</a> <br>
+									<a class="gemItem" id="SpiritOffering">Spirit Offering</a> <br>
+									<a class="gemItem" id="StormBrand">Storm Brand</a> <br>
+									<a class="gemItem" id="StormBurst">Storm Burst</a> <br>
+									<a class="gemItem" id="StormCall">Storm Call</a> <br>
+									<a class="gemItem" id="Stormbind">Stormbind</a> <br>
+									<a class="gemItem" id="StormblastMine">Stormblast Mine</a> <br>
+									<a class="gemItem" id="SummonCarrionGolem">Summon Carrion Golem</a> <br>
+									<a class="gemItem" id="SummonChaosGolem">Summon Chaos Golem</a> <br>
+									<a class="gemItem" id="SummonHolyRelic">Summon Holy Relic</a> <br>
+									<a class="gemItem" id="SummonLightningGolem">Summon Lightning Golem</a> <br>
+									<a class="gemItem" id="SummonRagingSpirit">Summon Raging Spirit</a> <br>
+									<a class="gemItem" id="SummonSkeletons">Summon Skeletons</a> <br>
+									<a class="gemItem" id="SummonSkitterbots">Summon Skitterbots</a> <br>
+									<a class="gemItem" id="TempestShield">Tempest Shield</a> <br>
+									<a class="gemItem" id="VoidSphere">Void Sphere</a> <br>
+									<a class="gemItem" id="Vortex">Vortex</a> <br>
+									<a class="gemItem" id="WaveofConviction">Wave of Conviction</a> <br>
+									<a class="gemItem" id="WinterOrb">Winter Orb</a> <br>
+									<a class="gemItem" id="WintertideBrand">Wintertide Brand</a> <br>
+									<a class="gemItem" id="Wither">Wither</a> <br>
+									<a class="gemItem" id="Wrath">Wrath</a> <br>
+									<a class="gemItem" id="Zealotry">Zealotry</a> <br>
+								</div>
+								
+							</div>
+						</div>
+						<div id="gemCol2">
+							<h4>
+								Support Gems
+							</h4>
+							<div class="textbox textbox2" contenteditable="false">
+								<a class="gemTitle">DEX Based</a> <br>
+								<div id="dexSupportGems">							
+									<a class="gemSupportItem" id="AddedColdDamage">Added Cold Damage</a> <br>
+									<a class="gemSupportItem" id="AdditionalAccuracy">Additional Accuracy</a> <br>
+									<a class="gemSupportItem" id="AdvancedTraps">Advanced Traps</a> <br>
+									<a class="gemSupportItem" id="ArrowNova">Arrow Nova</a> <br>
+									<a class="gemSupportItem" id="AwakenedAddedColdDamage">Awakened Added Cold Damage</a> <br>
+									<a class="gemSupportItem" id="AwakenedArrowNova">Awakened Arrow Nova</a> <br>
+									<a class="gemSupportItem" id="AwakenedCastOnCriticalStrike">Awakened Cast On Critical Strike</a> <br>
+									<a class="gemSupportItem" id="AwakenedChain">Awakened Chain</a> <br>
+									<a class="gemSupportItem" id="AwakenedColdPenetration">Awakened Cold Penetration</a> <br>
+									<a class="gemSupportItem" id="AwakenedDeadlyAilments">Awakened Deadly Ailments</a> <br>
+									<a class="gemSupportItem" id="AwakenedFork">Awakened Fork</a> <br>
+									<a class="gemSupportItem" id="AwakenedGreaterMultipleProjectiles">Awakened Greater Multiple Projectiles</a> <br>
+									<a class="gemSupportItem" id="AwakenedSwiftAffliction">Awakened Swift Affliction</a> <br>
+									<a class="gemSupportItem" id="AwakenedViciousProjectiles">Awakened Vicious Projectiles</a> <br>
+									<a class="gemSupportItem" id="AwakenedVoidManipulation">Awakened Void Manipulation</a> <br>
+									<a class="gemSupportItem" id="Barrage">Barrage</a> <br>
+									<a class="gemSupportItem" id="Blind">Blind</a> <br>
+									<a class="gemSupportItem" id="BlockChanceReduction">Block Chance Reduction</a> <br>
+									<a class="gemSupportItem" id="CastOnCriticalStrike">Cast On Critical Strike</a> <br>
+									<a class="gemSupportItem" id="CastonDeath">Cast on Death</a> <br>
+									<a class="gemSupportItem" id="Chain">Chain</a> <br>
+									<a class="gemSupportItem" id="ChancetoFlee">Chance to Flee</a> <br>
+									<a class="gemSupportItem" id="ChargedTraps">Charged Traps</a> <br>
+									<a class="gemSupportItem" id="CloseCombat">Close Combat</a> <br>
+									<a class="gemSupportItem" id="ClusterTraps">Cluster Traps</a> <br>
+									<a class="gemSupportItem" id="ColdPenetration">Cold Penetration</a> <br>
+									<a class="gemSupportItem" id="CullingStrike">Culling Strike</a> <br>
+									<a class="gemSupportItem" id="DeadlyAilments">Deadly Ailments</a> <br>
+									<a class="gemSupportItem" id="Enhance">Enhance</a> <br>
+									<a class="gemSupportItem" id="FasterAttacks">Faster Attacks</a> <br>
+									<a class="gemSupportItem" id="FasterProjectiles">Faster Projectiles</a> <br>
+									<a class="gemSupportItem" id="Fork">Fork</a> <br>
+									<a class="gemSupportItem" id="GreaterMultipleProjectiles">Greater Multiple Projectiles</a> <br>
+									<a class="gemSupportItem" id="GreaterVolley">Greater Volley</a> <br>
+									<a class="gemSupportItem" id="Hypothermia">Hypothermia</a> <br>
+									<a class="gemSupportItem" id="IceBite">Ice Bite</a> <br>
+									<a class="gemSupportItem" id="Impale">Impale</a> <br>
+									<a class="gemSupportItem" id="LesserMultipleProjectiles">Lesser Multiple Projectiles</a> <br>
+									<a class="gemSupportItem" id="LesserPoison">Lesser Poison</a> <br>
+									<a class="gemSupportItem" id="ManaLeech">Mana Leech</a> <br>
+									<a class="gemSupportItem" id="MirageArcher">Mirage Archer</a> <br>
+									<a class="gemSupportItem" id="MultipleTraps">Multiple Traps</a> <br>
+									<a class="gemSupportItem" id="Nightblade">Nightblade</a> <br>
+									<a class="gemSupportItem" id="Onslaught">Onslaught</a> <br>
+									<a class="gemSupportItem" id="Pierce">Pierce</a> <br>
+									<a class="gemSupportItem" id="PointBlank">Point Blank</a> <br>
+									<a class="gemSupportItem" id="Poison">Poison</a> <br>
+									<a class="gemSupportItem" id="SecondWind">Second Wind</a> <br>
+									<a class="gemSupportItem" id="SlowerProjectiles">Slower Projectiles</a> <br>
+									<a class="gemSupportItem" id="SwiftAffliction">Swift Affliction</a> <br>
+									<a class="gemSupportItem" id="SwiftAssembly">Swift Assembly</a> <br>
+									<a class="gemSupportItem" id="TrapandMineDamage">Trap and Mine Damage</a> <br>
+									<a class="gemSupportItem" id="Trap">Trap</a> <br>
+									<a class="gemSupportItem" id="ViciousProjectiles">Vicious Projectiles</a> <br>
+									<a class="gemSupportItem" id="VileToxins">Vile Toxins</a> <br>
+									<a class="gemSupportItem" id="VoidManipulation">Void Manipulation</a> <br>
+									<a class="gemSupportItem" id="Volley">Volley</a> <br>
+									<a class="gemSupportItem" id="WitheringTouch">Withering Touch</a> <br>
+								</div>
+								<br>
+								<a class="gemTitle">STR Based</a> <br>
+								<div id="strSupportGems">
+									<a class="gemSupportItem" id="AddedFireDamage">Added Fire Damage</a> <br>
+									<a class="gemSupportItem" id="AncestralCall">Ancestral Call</a> <br>
+									<a class="gemSupportItem" id="AwakenedAddedFireDamage">Awakened Added Fire Damage</a> <br>
+									<a class="gemSupportItem" id="AwakenedAncestralCall">Awakened Ancestral Call</a> <br>
+									<a class="gemSupportItem" id="AwakenedBrutality">Awakened Brutality</a> <br>
+									<a class="gemSupportItem" id="AwakenedBurningDamage">Awakened Burning Damage</a> <br>
+									<a class="gemSupportItem" id="AwakenedElementalDamageWithAttacks">Awakened Elemental Damage With Attacks</a> <br>
+									<a class="gemSupportItem" id="AwakenedFirePenetration">Awakened Fire Penetration</a> <br>
+									<a class="gemSupportItem" id="AwakenedGenerosity">Awakened Generosity</a> <br>
+									<a class="gemSupportItem" id="AwakenedMeleePhysicalDamage">Awakened Melee Physical Damage</a> <br>
+									<a class="gemSupportItem" id="AwakenedMeleeSplash">Awakened Melee Splash</a> <br>
+									<a class="gemSupportItem" id="AwakenedMultistrike">Awakened Multistrike</a> <br>
+									<a class="gemSupportItem" id="BallistaTotem">Ballista Totem</a> <br>
+									<a class="gemSupportItem" id="BloodMagic">Blood Magic</a> <br>
+									<a class="gemSupportItem" id="Bloodlust">Bloodlust</a> <br>
+									<a class="gemSupportItem" id="Brutality">Brutality</a> <br>
+									<a class="gemSupportItem" id="BurningDamage">Burning Damage</a> <br>
+									<a class="gemSupportItem" id="CastonMeleeKill">Cast on Melee Kill</a> <br>
+									<a class="gemSupportItem" id="CastwhenDamageTaken">Cast when Damage Taken</a> <br>
+									<a class="gemSupportItem" id="ChancetoBleed">Chance to Bleed</a> <br>
+									<a class="gemSupportItem" id="ColdtoFire">Cold to Fire</a> <br>
+									<a class="gemSupportItem" id="DamageonFullLife">Damage on Full Life</a> <br>
+									<a class="gemSupportItem" id="ElementalDamagewithAttacks">Elemental Damage with Attacks</a> <br>
+									<a class="gemSupportItem" id="Empower">Empower</a> <br>
+									<a class="gemSupportItem" id="EnduranceChargeonMeleeStun">Endurance Charge on Melee Stun</a> <br>
+									<a class="gemSupportItem" id="FirePenetration">Fire Penetration</a> <br>
+									<a class="gemSupportItem" id="FistofWar">Fist of War</a> <br>
+									<a class="gemSupportItem" id="Fortify">Fortify</a> <br>
+									<a class="gemSupportItem" id="Generosity">Generosity</a> <br>
+									<a class="gemSupportItem" id="IncreasedDuration">Increased Duration</a> <br>
+									<a class="gemSupportItem" id="Inspiration">Inspiration</a> <br>
+									<a class="gemSupportItem" id="IronGrip">Iron Grip</a> <br>
+									<a class="gemSupportItem" id="IronWill">Iron Will</a> <br>
+									<a class="gemSupportItem" id="Knockback">Knockback</a> <br>
+									<a class="gemSupportItem" id="LessDuration">Less Duration</a> <br>
+									<a class="gemSupportItem" id="LifeGainonHit">Life Gain on Hit</a> <br>
+									<a class="gemSupportItem" id="LifeLeech">Life Leech</a> <br>
+									<a class="gemSupportItem" id="Maim">Maim</a> <br>
+									<a class="gemSupportItem" id="MeleePhysicalDamage">Melee Physical Damage</a> <br>
+									<a class="gemSupportItem" id="MeleeSplash">Melee Splash</a> <br>
+									<a class="gemSupportItem" id="MultipleTotems">Multiple Totems</a> <br>
+									<a class="gemSupportItem" id="Multistrike">Multistrike</a> <br>
+									<a class="gemSupportItem" id="Pulverise">Pulverise</a> <br>
+									<a class="gemSupportItem" id="Rage">Rage</a> <br>
+									<a class="gemSupportItem" id="Ruthless">Ruthless</a> <br>
+									<a class="gemSupportItem" id="Shockwave">Shockwave</a> <br>
+									<a class="gemSupportItem" id="SpellTotem">Spell Totem</a> <br>
+									<a class="gemSupportItem" id="Stun">Stun</a> <br>
+									<a class="gemSupportItem" id="UrgentOrders">Urgent Orders</a> <br>
+								</div>
+								<br>
+								<a class="gemTitle">INT Based</a> <br>
+								<div id="intSupportGems">
+									<a class="gemSupportItem" id="AddedChaosDamage">Added Chaos Damage</a> <br>
+									<a class="gemSupportItem" id="AddedLightningDamage">Added Lightning Damage</a> <br>
+									<a class="gemSupportItem" id="ArcaneSurge">Arcane Surge</a> <br>
+									<a class="gemSupportItem" id="Archmage">Archmage</a> <br>
+									<a class="gemSupportItem" id="AwakenedAddedChaosDamage">Awakened Added Chaos Damage</a> <br>
+									<a class="gemSupportItem" id="AwakenedAddedLightningDamage">Awakened Added Lightning Damage</a> <br>
+									<a class="gemSupportItem" id="AwakenedBlasphemy">Awakened Blasphemy</a> <br>
+									<a class="gemSupportItem" id="AwakenedCastWhileChannelling">Awakened Cast While Channelling</a> <br>
+									<a class="gemSupportItem" id="AwakenedControlledDestruction">Awakened Controlled Destruction</a> <br>
+									<a class="gemSupportItem" id="AwakenedElementalFocus">Awakened Elemental Focus</a> <br>
+									<a class="gemSupportItem" id="AwakenedHextouch">Awakened Hextouch</a> <br>
+									<a class="gemSupportItem" id="AwakenedIncreasedAreaOfEffect">Awakened Increased Area Of Effect</a> <br>
+									<a class="gemSupportItem" id="AwakenedLightningPenetration">Awakened Lightning Penetration</a> <br>
+									<a class="gemSupportItem" id="AwakenedMinionDamage">Awakened Minion Damage</a> <br>
+									<a class="gemSupportItem" id="AwakenedSpellCascade">Awakened Spell Cascade</a> <br>
+									<a class="gemSupportItem" id="AwakenedSpellEcho">Awakened Spell Echo</a> <br>
+									<a class="gemSupportItem" id="AwakenedUnboundAilments">Awakened Unbound Ailments</a> <br>
+									<a class="gemSupportItem" id="AwakenedUnleash">Awakened Unleash</a> <br>
+									<a class="gemSupportItem" id="Blasphemy">Blasphemy</a> <br>
+									<a class="gemSupportItem" id="BlastchainMine">Blastchain Mine</a> <br>
+									<a class="gemSupportItem" id="Bonechill">Bonechill</a> <br>
+									<a class="gemSupportItem" id="CastwhenStunned">Cast when Stunned</a> <br>
+									<a class="gemSupportItem" id="CastwhileChannelling">Cast while Channelling</a> <br>
+									<a class="gemSupportItem" id="ChargedMines">Charged Mines</a> <br>
+									<a class="gemSupportItem" id="Combustion">Combustion</a> <br>
+									<a class="gemSupportItem" id="ConcentratedEffect">Concentrated Effect</a> <br>
+									<a class="gemSupportItem" id="ControlledDestruction">Controlled Destruction</a> <br>
+									<a class="gemSupportItem" id="Decay">Decay</a> <br>
+									<a class="gemSupportItem" id="Efficacy">Efficacy</a> <br>
+									<a class="gemSupportItem" id="ElementalArmy">Elemental Army</a> <br>
+									<a class="gemSupportItem" id="ElementalFocus">Elemental Focus</a> <br>
+									<a class="gemSupportItem" id="ElementalPenetration">Elemental Penetration</a> <br>
+									<a class="gemSupportItem" id="ElementalProliferation">Elemental Proliferation</a> <br>
+									<a class="gemSupportItem" id="EnergyLeech">Energy Leech</a> <br>
+									<a class="gemSupportItem" id="Enlighten">Enlighten</a> <br>
+									<a class="gemSupportItem" id="FasterCasting">Faster Casting</a> <br>
+									<a class="gemSupportItem" id="FeedingFrenzy">Feeding Frenzy</a> <br>
+									<a class="gemSupportItem" id="Hextouch">Hextouch</a> <br>
+									<a class="gemSupportItem" id="High-ImpactMine">High-Impact Mine</a> <br>
+									<a class="gemSupportItem" id="IgniteProliferation">Ignite Proliferation</a> <br>
+									<a class="gemSupportItem" id="Immolate">Immolate</a> <br>
+									<a class="gemSupportItem" id="ImpendingDoom">Impending Doom</a> <br>
+									<a class="gemSupportItem" id="IncreasedAreaofEffect">Increased Area of Effect</a> <br>
+									<a class="gemSupportItem" id="IncreasedCriticalDamage">Increased Critical Damage</a> <br>
+									<a class="gemSupportItem" id="IncreasedCriticalStrikes">Increased Critical Strikes</a> <br>
+									<a class="gemSupportItem" id="InfernalLegion">Infernal Legion</a> <br>
+									<a class="gemSupportItem" id="InfusedChannelling">Infused Channelling</a> <br>
+									<a class="gemSupportItem" id="Innervate">Innervate</a> <br>
+									<a class="gemSupportItem" id="Intensify">Intensify</a> <br>
+									<a class="gemSupportItem" id="ItemRarity">Item Rarity</a> <br>
+									<a class="gemSupportItem" id="LightningPenetration">Lightning Penetration</a> <br>
+									<a class="gemSupportItem" id="MeatShield">Meat Shield</a> <br>
+									<a class="gemSupportItem" id="Minefield">Minefield</a> <br>
+									<a class="gemSupportItem" id="MinionDamage">Minion Damage</a> <br>
+									<a class="gemSupportItem" id="MinionLife">Minion Life</a> <br>
+									<a class="gemSupportItem" id="MinionSpeed">Minion Speed</a> <br>
+									<a class="gemSupportItem" id="PhysicaltoLightning">Physical to Lightning</a> <br>
+									<a class="gemSupportItem" id="Pinpoint">Pinpoint</a> <br>
+									<a class="gemSupportItem" id="PowerChargeOnCritical">Power Charge On Critical</a> <br>
+									<a class="gemSupportItem" id="Predator">Predator</a> <br>
+									<a class="gemSupportItem" id="SpellCascade">Spell Cascade</a> <br>
+									<a class="gemSupportItem" id="SpellEcho">Spell Echo</a> <br>
+									<a class="gemSupportItem" id="SummonPhantasm">Summon Phantasm</a> <br>
+									<a class="gemSupportItem" id="Swiftbrand">Swiftbrand</a> <br>
+									<a class="gemSupportItem" id="UnboundAilments">Unbound Ailments</a> <br>
+									<a class="gemSupportItem" id="Unleash">Unleash</a> <br>
+								</div>
+								
+							</div>
+						</div>
+						<div id="gemCol3">
+							<h4>
+								Gem Info
+							</h4>
+							<div class="textbox textboxBig" contenteditable="false">
+								<!--
+								<a class="thumb" href="https://pathofexile.gamepedia.com/Added_Cold_Damage_Support" title="Added Cold Damage Support">
+								<img src="https://static.wikia.nocookie.net/pathofexile_gamepedia/images/3/39/Added_Cold_Damage_Support_inventory_icon.png" width="16px" height="16px" style="border:0; pointer-events: none"></img>
+								Added Cold Damage Support
+								</a>
+								-->
+								<a class="gemItem" id="AnimateWeapon">Animate Weapon</a> <br>
+								<a class="gemItem" id="ArcticArmour">Arctic Armour</a> <br>
+								<a class="gemItem" id="ArtilleryBallista">Artillery Ballista</a> <br>
+								<a class="gemItem" id="Barrage">Barrage</a> <br>
+								<a class="gemItem" id="BearTrap">Bear Trap</a> <br>
+								<a class="gemItem" id="BladeBlast">Blade Blast</a> <br>
+								<a class="gemItem" id="BladeFlurry">Blade Flurry</a> <br>
+								<a class="gemItem" id="BladeVortex">Blade Vortex</a> <br>
+								<a class="gemItem" id="Bladefall">Bladefall</a> <br>
+								<a class="gemItem" id="BlastRain">Blast Rain</a> <br>
+								<a class="gemItem" id="BlinkArrow">Blink Arrow</a> <br>
+								<a class="gemItem" id="BloodRage">Blood Rage</a> <br>
+								<a class="gemItem" id="BurningArrow">Burning Arrow</a> <br>
+								<a class="gemItem" id="CausticArrow">Caustic Arrow</a> <br>
+								<a class="gemItem" id="ChargedDash">Charged Dash</a> <br>
+								<a class="gemItem" id="CobraLash">Cobra Lash</a> <br>
+								<a class="gemItem" id="Cremation">Cremation</a> <br>
+								<a class="gemItem" id="Cyclone">Cyclone</a> <br>
+								<a class="gemItem" id="Dash">Dash</a> <br>
+								<a class="gemItem" id="Desecrate">Desecrate</a> <br>
+								<a class="gemItem" id="DetonateDead">Detonate Dead</a> <br>
+								<a class="gemItem" id="DoubleStrike">Double Strike</a> <br>
+								<a class="gemItem" id="DualStrike">Dual Strike</a> <br>
+								<a class="gemItem" id="ElementalHit">Elemental Hit</a> <br>
+								<a class="gemItem" id="EnsnaringArrow">Ensnaring Arrow</a> <br>
+								<a class="gemItem" id="EtherealKnives">Ethereal Knives</a> <br>
+								<a class="gemItem" id="ExplosiveArrow">Explosive Arrow</a> <br>
+								<a class="gemItem" id="ExplosiveTrap">Explosive Trap</a> <br>
+								<a class="gemItem" id="FireTrap">Fire Trap</a> <br>
+								<a class="gemItem" id="FlamethrowerTrap">Flamethrower Trap</a> <br>
+								<a class="gemItem" id="FlickerStrike">Flicker Strike</a> <br>
+								<a class="gemItem" id="Frenzy">Frenzy</a> <br>
+								<a class="gemItem" id="FrostBlades">Frost Blades</a> <br>
+								<a class="gemItem" id="GalvanicArrow">Galvanic Arrow</a> <br>
+								<a class="gemItem" id="Grace">Grace</a> <br>
+								<a class="gemItem" id="Haste">Haste</a> <br>
+								<a class="gemItem" id="Hatred">Hatred</a> <br>
+								<a class="gemItem" id="HeraldofAgony">Herald of Agony</a> <br>
+								<a class="gemItem" id="HeraldofIce">Herald of Ice</a> <br>
+								<a class="gemItem" id="IceShot">Ice Shot</a> <br>
+								<a class="gemItem" id="IceTrap">Ice Trap</a> <br>
+								<a class="gemItem" id="Lacerate">Lacerate</a> <br>
+								<a class="gemItem" id="LancingSteel">Lancing Steel</a> <br>
+								<a class="gemItem" id="LightningArrow">Lightning Arrow</a> <br>
+								<a class="gemItem" id="LightningStrike">Lightning Strike</a> <br>
+								<a class="gemItem" id="MirrorArrow">Mirror Arrow</a> <br>
+								<a class="gemItem" id="PestilentStrike">Pestilent Strike</a> <br>
+								<a class="gemItem" id="PhaseRun">Phase Run</a> <br>
+								<a class="gemItem" id="PlagueBearer">Plague Bearer</a> <br>
+								<a class="gemItem" id="Poacher'sMark">Poacher's Mark</a> <br>
+								<a class="gemItem" id="Precision">Precision</a> <br>
+								<a class="gemItem" id="Puncture">Puncture</a> <br>
+								<a class="gemItem" id="PurityofIce">Purity of Ice</a> <br>
+								<a class="gemItem" id="RainofArrows">Rain of Arrows</a> <br>
+								<a class="gemItem" id="Reave">Reave</a> <br>
+								<a class="gemItem" id="Riposte">Riposte</a> <br>
+								<a class="gemItem" id="ScourgeArrow">Scourge Arrow</a> <br>
+								<a class="gemItem" id="SeismicTrap">Seismic Trap</a> <br>
+								<a class="gemItem" id="ShatteringSteel">Shattering Steel</a> <br>
+								<a class="gemItem" id="ShrapnelBallista">Shrapnel Ballista</a> <br>
+								<a class="gemItem" id="SiegeBallista">Siege Ballista</a> <br>
+								<a class="gemItem" id="SmokeMine">Smoke Mine</a> <br>
+								<a class="gemItem" id="Sniper'sMark">Sniper's Mark</a> <br>
+								<a class="gemItem" id="SpectralShieldThrow">Spectral Shield Throw</a> <br>
+								<a class="gemItem" id="SpectralThrow">Spectral Throw</a> <br>
+								<a class="gemItem" id="SplitArrow">Split Arrow</a> <br>
+								<a class="gemItem" id="SummonIceGolem">Summon Ice Golem</a> <br>
+								<a class="gemItem" id="TemporalChains">Temporal Chains</a> <br>
+								<a class="gemItem" id="TornadoShot">Tornado Shot</a> <br>
+								<a class="gemItem" id="ToxicRain">Toxic Rain</a> <br>
+								<a class="gemItem" id="Unearth">Unearth</a> <br>
+								<a class="gemItem" id="VenomGyre">Venom Gyre</a> <br>
+								<a class="gemItem" id="ViperStrike">Viper Strike</a> <br>
+								<a class="gemItem" id="VolatileDead">Volatile Dead</a> <br>
+								<a class="gemItem" id="WhirlingBlades">Whirling Blades</a> <br>
+								<a class="gemItem" id="WildStrike">Wild Strike</a> <br>
+								<a class="gemItem" id="WitheringStep">Withering Step</a> <br>
+								
+							</div>
 						</div>
 					</div>
 				</div>

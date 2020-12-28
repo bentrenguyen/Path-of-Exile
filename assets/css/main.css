@@ -133,22 +133,53 @@ text-decoration-color: #262429;
 
 div.textbox {
 	background-color: #ececec;
-	height: 30em;
-	width: 15em;  
+	height: 35em;
 	overflow-x: hidden;
 	overflow-y: scroll;
 	border: solid;
 	border-width: 1px;
 	border-color: #aaa;
+	padding: 0.25em 1em 1em 1em;
 }
 
-.gemItem {
-	margin: 1em;
+div.textbox1 {
+	width: 15em;
 }
+
+div.textbox2 {
+	width: 18em;
+}
+
+div.textboxBig {
+	width: 30em
+}
+
 
 #skillGemInput {
 	width: 15em;
 }
+
+
+#gemCol1 {
+	display: inline-block;
+	margin-right: 2em;
+}
+#gemCol2 {
+	display: inline-block;
+	margin-right: 2em;;
+}
+
+#gemCol3 {
+	display: inline-block;
+}
+
+.gemTitle {
+	color: black;
+	font-weight: bold;
+	pointer-events: none;	
+}
+
+
 /*
 	User Added End
 */
