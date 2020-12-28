@@ -151,13 +151,13 @@ function gemAddRow(table, gemName) {
 	var newCell  = newRow.insertCell(1);
 	var newElem = document.createElement("P");
 	// look up level req from JSON
-	newElem.innerText = "12";
+	newElem.innerText = getGemLvl(gemName);
 	newCell.appendChild(newElem);
 
 	var newCell  = newRow.insertCell(2);
 	var newElem = document.createElement("P");
 	// look up quest reward from JSON
-	newElem.innerText = "The Bring King";
+	newElem.innerText = getGemQuest(gemName);
 	newCell.appendChild(newElem);
 
 	newCell = newRow.insertCell(3);
@@ -171,4 +171,12 @@ function gemAddRow(table, gemName) {
 function deleteRow(row) {
 	var p=row.parentNode.parentNode;
 	p.parentNode.removeChild(p);
+}
+
+function getGemLvl(gemName) {
+	return 12;
+}
+
+function getGemQuest(gemName) {
+	return "The Brine King";
 }

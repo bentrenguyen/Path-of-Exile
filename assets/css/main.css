@@ -187,6 +187,10 @@ div.textboxBig {
 	cursor: pointer;
 }
 
+.gemSupportItem {
+	cursor: pointer;
+}
+
 .gemTitle {
 	color: black;
 	font-weight: bold;
