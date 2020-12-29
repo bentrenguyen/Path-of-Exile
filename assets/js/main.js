@@ -174,9 +174,28 @@ function deleteRow(row) {
 }
 
 function getGemLvl(gemName) {
-	return 12;
+	var gemLvl = -1;
+	$.getJSON("../PoEgems_Heist_2020-12-27.json", function(data) {
+		console.log("hi");
+		$.each(data.name, function(i, f) {
+			alert(removeSpaces(f));
+			if (removeSpaces(f) != gemName) {
+				return true;
+			}
+			gemLvl = f.level;
+	  });
+	
+	});
+	return gemLvl;
 }
 
 function getGemQuest(gemName) {
 	return "The Brine King";
+}
+
+var dataJSON = JSON.parse(PoEgems_Heist_2020-12-27);
+alert(dataJSON);
+
+function removeSpaces(string) {
+	return string.replace(" ", "");
 }
