@@ -118,6 +118,7 @@ function check() {
 	$("#contentDiv").load('generic.html #notesImg');
 }
 
+/*
 document.getElementById("skillGemInput").addEventListener('keyup', event => {
 	if (event.code == "Enter") {
 		var gemInputText = document.getElementById("skillGemInput").value;
@@ -133,13 +134,27 @@ document.getElementById("skillGemInput").addEventListener('keyup', event => {
 			   $(".gemItem").animate({
 				   scrollTop: $(this).offset().top
 			   });
-			   */
+			   
 			}
 		});
 	}
-})
+});
+*/
+
+var gemDict = {};
+$.getJSON('assets/gemData.json', function(data) {
+    $.each(data.gem, function(i, f) {
+        var name = removeSpaces(f.name);
+        var lvl = f.level;
+        var quest = f.quests;
+        gemDict[name] = [lvl, quest];
+  });
+});
 
 function gemAddRow(table, gemName) {
+	console.log(gemName);
+	console.log(removeSpaces(gemName));
+
 	var tableRef = document.getElementById(table);
 	var newRow = tableRef.insertRow(-1);
 
@@ -173,19 +188,10 @@ function deleteRow(row) {
 	p.parentNode.removeChild(p);
 }
 
+
 function getGemLvl(gemName) {
 	var gemLvl = -1;
-	$.getJSON("../PoEgems_Heist_2020-12-27.json", function(data) {
-		console.log("hi");
-		$.each(data.name, function(i, f) {
-			alert(removeSpaces(f));
-			if (removeSpaces(f) != gemName) {
-				return true;
-			}
-			gemLvl = f.level;
-	  });
-	
-	});
+	gemLvl = gemDict[gemName][0];
 	return gemLvl;
 }
 
@@ -193,9 +199,7 @@ function getGemQuest(gemName) {
 	return "The Brine King";
 }
 
-var dataJSON = JSON.parse(PoEgems_Heist_2020-12-27);
-alert(dataJSON);
 
 function removeSpaces(string) {
-	return string.replace(" ", "");
+	return string.replaceAll(" ", "");
 }
