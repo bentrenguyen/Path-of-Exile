@@ -145,42 +145,65 @@ var gemDict = {};
 $.getJSON('assets/gemData.json', function(data) {
     $.each(data.gem, function(i, f) {
         var name = removeSpaces(f.name);
-        var lvl = f.level;
-        var quest = f.quests;
-        gemDict[name] = [lvl, quest];
+		var lvl = f.level;
+		var quest;
+		if (f.quests == "") {
+			quest = "n/a"
+		} else {
+			quest = f.quests;
+		}
+		var vendor = vendorTranslate(f.vendors);
+        gemDict[name] = [lvl, vendor, quest];
   });
 });
 
-function gemAddRow(table, gemName) {
-	console.log(gemName);
-	console.log(removeSpaces(gemName));
+function vendorTranslate(vendorData) {
+	var retval = [];
+	var act;
+	var name;
+	var classes;
+	$.each(vendorData, function(i, f) {
+		act = f.act;
+		name = f.name;
+		classes = f.classes;
+		str = "Act " + act + ": " + name + ", " + classes;
+		retval.push(str);
+	});
+}
 
+function gemAddRow(table, gemName) {
 	var tableRef = document.getElementById(table);
 	var newRow = tableRef.insertRow(-1);
 
-	var newCell  = newRow.insertCell(0);
-	var newElem = document.createElement("P");
-	newElem.innerText = gemName;
-	newCell.appendChild(newElem);
-
-	var newCell  = newRow.insertCell(1);
-	var newElem = document.createElement("P");
-	// look up level req from JSON
-	newElem.innerText = getGemLvl(gemName);
-	newCell.appendChild(newElem);
-
-	var newCell  = newRow.insertCell(2);
-	var newElem = document.createElement("P");
-	// look up quest reward from JSON
-	newElem.innerText = getGemQuest(gemName);
-	newCell.appendChild(newElem);
-
-	newCell = newRow.insertCell(3);
+	newCell = newRow.insertCell(0);
 	newElem = document.createElement('A');
 	newElem.innerText = "X";
 	newElem.setAttribute("onclick", 'deleteRow(this)')
 	newElem.setAttribute("style", "cursor:pointer; text-decoration: none;")
 	newCell.appendChild(newElem);
+
+	var newCell  = newRow.insertCell(1);
+	var newElem = document.createElement("P");
+	newElem.innerText = gemName;
+	newCell.appendChild(newElem);
+
+	var newCell  = newRow.insertCell(2);
+	var newElem = document.createElement("P");
+	// look up level req from JSON
+	newElem.innerText = getGemLvl(gemName);
+	newCell.appendChild(newElem);
+
+	var newCell  = newRow.insertCell(3);
+	var newElem = document.createElement("P");
+	newElem.innerText = getGemVendor(gemName);
+	newCell.appendChild(newElem);
+
+	var newCell  = newRow.insertCell(4);
+	var newElem = document.createElement("P");
+	// look up quest reward from JSON
+	newElem.innerText = getGemQuest(gemName);
+	newCell.appendChild(newElem);
+
 }  
 
 function deleteRow(row) {
@@ -190,15 +213,16 @@ function deleteRow(row) {
 
 
 function getGemLvl(gemName) {
-	var gemLvl = -1;
-	gemLvl = gemDict[gemName][0];
-	return gemLvl;
+	return gemDict[gemName][0];
 }
 
 function getGemQuest(gemName) {
-	return "The Brine King";
+	return gemDict[gemName][2];
 }
 
+function getGemVendor(gemName) {
+	return gemDict[gemName][1];
+}
 
 function removeSpaces(string) {
 	return string.replaceAll(" ", "");

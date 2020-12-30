@@ -144,7 +144,7 @@ text-decoration-color: #262429;
 div.textbox {
 	background-color: #ececec;
 	height: 35em;
-	overflow-x: hidden;
+	
 	overflow-y: scroll;
 	border: solid;
 	border-width: 1px;
@@ -153,14 +153,17 @@ div.textbox {
 }
 
 div.textbox1 {
+	overflow-x: hidden;
 	width: 15em;
 }
 
 div.textbox2 {
+	overflow-x: hidden;
 	width: 18em;
 }
 
 div.textboxBig {
+	overflow-x: scroll;
 	width: 40em
 }
 
