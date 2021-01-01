@@ -131,6 +131,23 @@ text-decoration-color: #262429;
 
 }
 
+#beastDiv {
+	overflow: hidden;
+
+
+}
+
+#beastFrame {
+	height: 1400px;
+	width: 75%;
+	margin-top: -290px;
+	pointer-events: none;
+	margin-bottom: -142px;
+	margin-left: -185px;
+	margin-right: -10px;
+	overflow: scroll;
+}
+
 .gemTable {
 	table-layout: fixed;
 }
