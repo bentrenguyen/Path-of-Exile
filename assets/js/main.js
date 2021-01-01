@@ -168,22 +168,22 @@ function vendorTranslate(vendorData) {
 		act = vendorData[elem]['act'];
 		name = vendorData[elem]['name'];
 		classes = vendorData[elem]['classes'];
-		str = "Act " + act + ": " + vendorToReadable(name) + " (" + classes + ")";
+		str = ("Act " + act).bold() + ": " + vendorToReadable(name) + " (" + fixAllClassesString(classes) + ")";
 		retval.push(str);
-		retval.push("\n");
+		retval.push("<br>");
 	}
 	retval = retval.join('');
 
 	return retval;
 }
 
-function gemAddRow(table, gemName) {
+function gemAddRow(table, gemId, gemName) {
 	var tableRef = document.getElementById(table);
 	var newRow = tableRef.insertRow(-1);
 
 	newCell = newRow.insertCell(0);
 	newElem = document.createElement('A');
-	newElem.innerText = "X";
+	newElem.innerHTML = "X";
 	newElem.setAttribute("onclick", 'deleteRow(this)')
 	newElem.setAttribute("style", "cursor:pointer; text-decoration: none;")
 	newElem.setAttribute("class", "gemInfoAdded");
@@ -191,7 +191,7 @@ function gemAddRow(table, gemName) {
 
 	var newCell  = newRow.insertCell(1);
 	var newElem = document.createElement("P");
-	newElem.innerText = gemNameAddSpaces(gemName);
+	newElem.innerHTML = gemName;
 	newElem.setAttribute("class", "gemInfoAdded");
 	newCell.appendChild(newElem);
 
@@ -199,13 +199,13 @@ function gemAddRow(table, gemName) {
 	var newElem = document.createElement("P");
 	newElem.setAttribute("class", "gemInfoAdded");
 	// look up level req from JSON
-	newElem.innerText = getGemLvl(gemName);
+	newElem.innerHTML = getGemLvl(gemId);
 	newCell.appendChild(newElem);
 
 	var newCell  = newRow.insertCell(3);
 	var newElem = document.createElement("P");
 	newElem.setAttribute("class", "gemInfoAdded");
-	newElem.innerText = getGemVendor(gemName);
+	newElem.innerHTML = getGemVendor(gemId);
 	newCell.appendChild(newElem);
 
 }  
@@ -240,12 +240,15 @@ function vendorToReadable(name) {
 	return returnString;
 }
 
+//obsolete
 function gemNameAddSpaces(name) {
-	var re = /(.)([A-Z])/;
-	name = name.replace(re, "$1 $2");
+	var re = /(.)([A-Z])/g;
+	name = name.replaceAll(re, "$1 $2");
 	return name;
 }
 
 function fixAllClassesString(string) {
-	return;
+	var re = /All, Classes/;
+	string = string.replace(re, "All Classes");
+	return string;
 }
