@@ -168,9 +168,12 @@ function vendorTranslate(vendorData) {
 		act = vendorData[elem]['act'];
 		name = vendorData[elem]['name'];
 		classes = vendorData[elem]['classes'];
-		str = "Act " + act + ": " + vendorToReadable(name) + ", " + classes;
+		str = "Act " + act + ": " + vendorToReadable(name) + " (" + classes + ")";
 		retval.push(str);
+		retval.push("\n");
 	}
+	retval = retval.join('');
+
 	return retval;
 }
 
@@ -188,7 +191,7 @@ function gemAddRow(table, gemName) {
 
 	var newCell  = newRow.insertCell(1);
 	var newElem = document.createElement("P");
-	newElem.innerText = gemName;
+	newElem.innerText = gemNameAddSpaces(gemName);
 	newElem.setAttribute("class", "gemInfoAdded");
 	newCell.appendChild(newElem);
 
@@ -235,4 +238,14 @@ function vendorToReadable(name) {
 	});
 	returnString = returnString.concat(rest);
 	return returnString;
+}
+
+function gemNameAddSpaces(name) {
+	var re = /(.)([A-Z])/;
+	name = name.replace(re, "$1 $2");
+	return name;
+}
+
+function fixAllClassesString(string) {
+	return;
 }
