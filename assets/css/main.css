@@ -200,6 +200,13 @@ div.textboxBig {
 	pointer-events: none;	
 }
 
+#gemInfoTable {
+	table-layout: fixed;
+}
+
+.gemInfoAdded {
+	word-wrap: break-word;
+}
 
 /*
 	User Added End

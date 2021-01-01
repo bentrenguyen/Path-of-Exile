@@ -118,6 +118,7 @@ function check() {
 	$("#contentDiv").load('generic.html #notesImg');
 }
 
+// old attempt at skillgem searchbar
 /*
 document.getElementById("skillGemInput").addEventListener('keyup', event => {
 	if (event.code == "Enter") {
@@ -146,29 +147,31 @@ $.getJSON('assets/gemData.json', function(data) {
     $.each(data.gem, function(i, f) {
         var name = removeSpaces(f.name);
 		var lvl = f.level;
-		var quest;
-		if (f.quests == "") {
-			quest = "n/a"
-		} else {
-			quest = f.quests;
-		}
 		var vendor = vendorTranslate(f.vendors);
-        gemDict[name] = [lvl, vendor, quest];
+        gemDict[name] = [lvl, vendor];
   });
 });
 
+function logVendor(vendors) {
+	console.log(vendors[0]['name']);
+}
+
 function vendorTranslate(vendorData) {
 	var retval = [];
+	if (vendorData == []) {
+		return;
+	}
 	var act;
 	var name;
 	var classes;
-	$.each(vendorData, function(i, f) {
-		act = f.act;
-		name = f.name;
-		classes = f.classes;
-		str = "Act " + act + ": " + name + ", " + classes;
+	for (elem in vendorData) {
+		act = vendorData[elem]['act'];
+		name = vendorData[elem]['name'];
+		classes = vendorData[elem]['classes'];
+		str = "Act " + act + ": " + vendorToReadable(name) + ", " + classes;
 		retval.push(str);
-	});
+	}
+	return retval;
 }
 
 function gemAddRow(table, gemName) {
@@ -180,28 +183,26 @@ function gemAddRow(table, gemName) {
 	newElem.innerText = "X";
 	newElem.setAttribute("onclick", 'deleteRow(this)')
 	newElem.setAttribute("style", "cursor:pointer; text-decoration: none;")
+	newElem.setAttribute("class", "gemInfoAdded");
 	newCell.appendChild(newElem);
 
 	var newCell  = newRow.insertCell(1);
 	var newElem = document.createElement("P");
 	newElem.innerText = gemName;
+	newElem.setAttribute("class", "gemInfoAdded");
 	newCell.appendChild(newElem);
 
 	var newCell  = newRow.insertCell(2);
 	var newElem = document.createElement("P");
+	newElem.setAttribute("class", "gemInfoAdded");
 	// look up level req from JSON
 	newElem.innerText = getGemLvl(gemName);
 	newCell.appendChild(newElem);
 
 	var newCell  = newRow.insertCell(3);
 	var newElem = document.createElement("P");
+	newElem.setAttribute("class", "gemInfoAdded");
 	newElem.innerText = getGemVendor(gemName);
-	newCell.appendChild(newElem);
-
-	var newCell  = newRow.insertCell(4);
-	var newElem = document.createElement("P");
-	// look up quest reward from JSON
-	newElem.innerText = getGemQuest(gemName);
 	newCell.appendChild(newElem);
 
 }  
@@ -211,13 +212,8 @@ function deleteRow(row) {
 	p.parentNode.removeChild(p);
 }
 
-
 function getGemLvl(gemName) {
 	return gemDict[gemName][0];
-}
-
-function getGemQuest(gemName) {
-	return gemDict[gemName][2];
 }
 
 function getGemVendor(gemName) {
@@ -226,4 +222,17 @@ function getGemVendor(gemName) {
 
 function removeSpaces(string) {
 	return string.replaceAll(" ", "");
+}
+
+function vendorToReadable(name) {
+	var returnString = "";
+	var firstLetter = name[0];
+	returnString = returnString.concat(firstLetter.toUpperCase());
+	var re = /_(.)/g;
+	var rest = name.slice(1);
+	rest = rest.replaceAll(re, function(match, capture) {
+		return " " + capture.toUpperCase();
+	});
+	returnString = returnString.concat(rest);
+	return returnString;
 }
