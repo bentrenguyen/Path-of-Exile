@@ -23,6 +23,7 @@ list.addEventListener('click', function(ev) {
     }
     ev.target.classList.toggle('checked');
     document.getElementById("substringbox").classList.remove("copied");
+    document.getElementById("copybutton").textContent = "Copy"
     update_length();
   }
 }, false);
@@ -34,12 +35,15 @@ function reset() {
   document.getElementById("substringbox").textContent = '';
   document.getElementById("quantselect").value = "Select"
   document.getElementById("packsizeselect").value = "Select"
+  document.getElementById("substringbox").classList.remove("copied");
+  document.getElementById("copybutton").textContent = "Copy"
   update_length();
 }
 
 function copy() {
   var copyText = document.getElementById("substringbox").textContent;
   document.getElementById("substringbox").classList.add("copied");
+  document.getElementById("copybutton").textContent = "Copied!"
   navigator.clipboard.writeText(copyText);
 }
 
@@ -117,6 +121,7 @@ function select_dropdown(select_type) {
     }
   }
   document.getElementById("substringbox").classList.remove("copied");
+  document.getElementById("copybutton").textContent = "Copy"
   update_length();
 }
 

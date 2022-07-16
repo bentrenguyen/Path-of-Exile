@@ -33,10 +33,12 @@
               <i id="lengthtrackererror"></i>
             </div>
           </div>
-          <div id="inputdiv">
+          <div class="buttondiv">
             <button id="copybutton" class="button-1" onclick ="copy()">Copy</button>
             <button id="resetbutton" class="button-1" onclick="reset()">Reset</button>
-            <div>
+          </div>
+          <div id="inputdiv">
+            <div id="quantdiv">
               <label class="boxlabel" for="quantselect">Minimum Quantity </label>
               <select id="quantselect" class="select_dropdown" onchange="select_dropdown('quant')">
                 <option>Select</option>
@@ -46,7 +48,8 @@
                 <option>90</option>
                 <option>100</option>
               </select>
-              <br>
+            </div>
+            <div id="packsizediv">
               <label class="boxlabel" for="packsizeselect">Minimum Pack Size </label>
               <select id="packsizeselect" class="select_dropdown" onchange="select_dropdown('packsize')">
                 <option>Select</option>
@@ -57,6 +60,7 @@
                 <option>60</option>
               </select>
             </div>
+
           </div>
           <input type="text" id="searchbox" onkeyup="searchbox()" placeholder="Search for a modifier...">
 
