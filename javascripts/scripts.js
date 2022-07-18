@@ -137,3 +137,23 @@ function update_length() {
     document.getElementById("lengthtrackererror").textContent = "";
   }
 }
+
+function decode() {
+  var b64Data = document.getElementById('test').value;
+  var strData = atob(b64Data);
+  var charData = Array.from(strData, x => x.charCodeAt(0));
+  var binData = new Uint8Array(charData);
+  var data = pako.inflate(binData);
+  var decoded_text = String.fromCharCode.apply(null, new Uint16Array(data));
+  document.getElementById("decoded").textContent = decoded_text;
+
+  parser = new DOMParser();
+  xml = parser.parseFromString(decoded_text, "text/xml");
+  var className = xml.getElementsByTagName("Build")[0].getAttribute("className");
+  var xml_gems = xml.getElementsByTagName("Gem");
+  var gems = [];
+  for (i = 0; i < xml_gems.length; i++) {
+    gem_name = xml_gems[i].getAttribute("nameSpec");
+    gems += gem_name;
+  }
+}
