@@ -140,6 +140,8 @@ function update_length() {
 
 var className;
 var gems = [];
+
+/* TODO:  */
 function decode() {
   var b64Data = document.getElementById('test').value;
   var strData = atob(b64Data);
@@ -147,7 +149,6 @@ function decode() {
   var binData = new Uint8Array(charData);
   var data = pako.inflate(binData);
   var decoded_text = String.fromCharCode.apply(null, new Uint16Array(data));
-  document.getElementById("decoded").textContent = decoded_text;
 
   parser = new DOMParser();
   xml = parser.parseFromString(decoded_text, "text/xml");
@@ -155,10 +156,61 @@ function decode() {
   var xml_gems = xml.getElementsByTagName("Gem");
   for (i = 0; i < xml_gems.length; i++) {
     gem_name = xml_gems[i].getAttribute("nameSpec");
-    gems += gem_name;
+    var skillId = xml_gems[i].getAttribute("skillId");
+    if (skillId.includes('Support')) {
+      gem_name += ' support'
+    }
+    gems.push(gem_name.toLowerCase().replace('awakened ', ''));
+
   }
   document.getElementById('className').textContent = className;
-  document.getElementById('gemlist').textContent = gems;
+  var red_gems = [], blue_gems = [], green_gems = [];
+  for (i = 0; i <gems.length; i++) {
+    gem = gems[i]
+    new_gem = document.createElement('div');
+    new_gem.className = "gemitem";
+    img = document.createElement('img');
+    if (gem in red_gems_json) {
+      red_gems.push(gem);
+      document.getElementById("redgems").appendChild(new_gem);
+      imgspan = document.createElement('span');
+      imgspan.className = 'gemiconspan';
+      img.className = 'gemicon';
+      img.src = "assets/Lifetap_Support_inventory_icon.png"
+      imgspan.appendChild(img);
+      new_gem.appendChild(imgspan);
+      textspan = document.createElement('span');
+      textspan.className = 'gemtext';
+      textspan.textContent = gem;
+      new_gem.appendChild(textspan);
+    } else if (gem in green_gems_json) {
+      green_gems.push(gem);
+    } else if (gem in blue_gems_json) {
+      blue_gems.push(gem);
+    }
+    
+    
+  }
+  /*
+  document.getElementById('redgems').textContent = red_gems;
+  document.getElementById('greengems').textContent = green_gems;
+  document.getElementById('bluegems').textContent = blue_gems;
+  document.getElementById('gemlist').textContent = gems; 
+  
+
+  var red_gems_substring = [], blue_gems_substring = [], green_gems_substring = [];
+  gem_to_substring(red_gems, red_gems_substring, red_gems_json, "redgemssubstring");
+  gem_to_substring(green_gems, green_gems_substring, green_gems_json, "greengemssubstring");
+  gem_to_substring(blue_gems, blue_gems_substring, blue_gems_json, "bluegemssubstring");
+  */
+}
+
+function gem_to_substring(color, substring_array, color_json, id) {
+  document.getElementById(id).textContent = '"';
+  for (gem of color) {
+    document.getElementById(id).textContent += color_json[gem] + "|";
+  }
+  document.getElementById(id).textContent = document.getElementById(id).textContent.slice(0, -1) + '"';
 }
 
 var red_gems_json = {'absolution': 'abs',
