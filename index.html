@@ -18,8 +18,9 @@
         <h1>Path of Exile Tools</h1>
         <p>by Bentre</p>
         <ul>
-          <li><a>Map Mod Regex</a></li>
+          <li><a onclick="change_display('mapmodregex')">Map Mod Regex</a></li>
           <li>Poeninja Modchecker</li>
+          <li><a onclick="change_display('gems')">Gems</a></li>
         </ul>
       </header>
       <section id="mapmodregex">
@@ -149,7 +150,7 @@
             </ul>
           </div>
       </section>
-      <section id="gems">
+      <section class="hide_section" id="gems">
         <h1>Gems</h1>
         <!-- Test -->
         <input type="text" id="test"/>
@@ -160,13 +161,15 @@
         <div id="gemlist"></div>
         <div id="allgems">
           <label for="redgems">Red Gems: </label>
-          <div id="redgems"></div>
-          <div id="redgemssubstring"></div>
+            <div id="redgems" class="gemnames"></div>
           <label for="greengems">Green Gems: </label>
-          <div id="greengems"></div> 
-          <div id="greengemssubstring"></div>
+            <div id="greengems" class="gemnames"></div> 
           <label for="bluegems">Blue Gems: </label>
-          <div id="bluegems"></div>
+            <div id="bluegems" class="gemnames"></div>
+        </div>
+        <div id="gemssubstrings">
+          <div id="redgemssubstring"></div>
+          <div id="greengemssubstring"></div>
           <div id="bluegemssubstring"></div>
         </div>
       </section>

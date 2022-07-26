@@ -356,23 +356,7 @@ footer {
   background: #555; 
 }
 
-#allgems {
-  column-count: 3;
-}
 
-#redgems {
-  display: inline-block;
-}
-
-.gemicon {
-  width: 1.5em;
-  height: 1.5em;
-}
-
-.gemtext {
-  
-  width: 1.5em;
-  height: 1.5em;
-  line-height: 1.5em;
-  vertical-align: 5px;
+.hide_section {
+  display: none;
 }
