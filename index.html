@@ -17,13 +17,19 @@
       <header>
         <h1>Path of Exile Tools</h1>
         <p>by Bentre</p>
+        <a href="https://github.com/bentrenguyen/poe">View the Project on GitHub
+          <small>bentrenguyen/poe</small>
+        </a>
+        
+        <br>
         <ul>
           <li><a onclick="change_display('mapmodregex')">Map Mod Regex</a></li>
-          <li>Poeninja Modchecker</li>
-          <li><a onclick="change_display('gems')">Gems</a></li>
+          <li><a onclick="change_display('gemvendorregex')">Gem Vendor Regex</a></li>
+          <li><a onclick="change_display('gemcampaignlocation')">Gem Campaign Location</a></li>
+          <li><a onclick="change_display('gemlocationmanual')">Gem Location Manual</a></li>
         </ul>
       </header>
-      <section id="mapmodregex">
+      <section id="mapmodregex" class="hide_section">
         <h1>Map Mod Regex</h1>
           <div id="substringboxbox">
             <div id="substringbox" onchange="update_length()"></div>
@@ -150,31 +156,189 @@
             </ul>
           </div>
       </section>
-      <section class="hide_section" id="gems">
-        <h1>Gems</h1>
-        <!-- Test -->
-        <input type="text" id="test"/>
-        <button id="testbutton" onclick="decode()">Decode</button>
-        <label for="className">Class:</label>
-        <div id="className"></div>
-        <label for="gemlist">All Gems: </label>
-        <div id="gemlist"></div>
-        <div id="allgems">
-          <label for="redgems">Red Gems: </label>
-            <div id="redgems" class="gemnames"></div>
-          <label for="greengems">Green Gems: </label>
-            <div id="greengems" class="gemnames"></div> 
-          <label for="bluegems">Blue Gems: </label>
-            <div id="bluegems" class="gemnames"></div>
-        </div>
-        <div id="gemssubstrings">
-          <div id="redgemssubstring"></div>
-          <div id="greengemssubstring"></div>
-          <div id="bluegemssubstring"></div>
+      <section id="gemvendorregex" class="hide_section">
+        <h1>Gem Vendor Regex</h1>
+        <h3>Generate Regex from Path of Building export code</h3>
+        <input type="text" id="test" placeholder="Paste PoB code here"/>
+        <button id="testbutton" onclick="decode()">Import</button>
+        <br>
+        <br>
+        <div id="gemerror"></div>
+        <div id="allgems" class="hide_allgems">
+          <div id="redgems" class="gemnames">
+            <div class="gemheader">Red Gems</div>
+            <div id="redgemnames"></div>
+            <hr>
+            <div id="redgemssubstring" class="gemsubstring"></div>
+            <button id="redcopygem" class="button-2" onclick ="copygem('red')">Copy</button>
+          </div>
+          <div id="greengems" class="gemnames">
+            <div class="gemheader">Green Gems</div>
+            <div id="greengemnames"></div>
+            <hr>
+            <div id="greengemssubstring" class="gemsubstring"></div>
+            <button id="greencopygem" class="button-2" onclick ="copygem('green')">Copy</button>
+          </div> 
+          <div id="bluegems" class="gemnames">
+            <div class="gemheader">Blue Gems</div>
+            <div id="bluegemnames"></div>
+            <hr>
+            <div id="bluegemssubstring" class="gemsubstring"></div>
+            <button id="bluecopygem" class="button-2" onclick ="copygem('blue')">Copy</button>
+          </div>
         </div>
       </section>
+      <section id="gemcampaignlocation" class="hide_section">
+        <h1>Gem Campaign Location</h1>
+        <input type="text" id="gemcampaignb64" placeholder="Paste PoB code here"/>
+        <button id="testbutton2" onclick="decode2()">Import</button>
+        <br>
+        <input type="checkbox" id="siosa_check" name="siosa_check" onclick="siosa_checked()">
+        <label for="siosa_check">Library quest completed?</label>
+        <br>
+        <label for="className">Class:</label>
+        <span id="className"></span>
+        <div id="gemquestlocation">
+          <div id="Act 1">Act 1<br></div>
+          <div id="Act 2">Act 2<br></div>
+          <div id="Act 3">Act 3<br></div>
+          <div id="Act 4">Act 4<br></div>
+          <div id="No Act">No Act<br></div>
+        </div>
+      </section>
+      <section id="gemlocationmanual">
+        <h1>Gem Location Manual</h1>
+        <input type="text" class="searchbox" id="gemsearchbox" onkeyup="gemsearchbox()" placeholder="Search for a gem...">
+        <div id="gemboxdiv">
+          <div class="gembox" id="gembox1"">
+            <ul id="gemboxgems" class="gemboxgems">
+              <li class="gemboxgem">Absolution</li>
+              <li class="gemboxgem">Ancestral Cry</li>
+              <li class="gemboxgem">Ancestral Protector</li>
+              <li class="gemboxgem">Ancestral Warchief</li>
+              <li class="gemboxgem">Anger</li>
+              <li class="gemboxgem">Animate Guardian</li>
+              <li class="gemboxgem">Battlemages Cry</li>
+              <li class="gemboxgem">Berserk</li>
+              <li class="gemboxgem">Bladestorm</li>
+              <li class="gemboxgem">Blood And Sand</li>
+              <li class="gemboxgem">Boneshatter</li>
+              <li class="gemboxgem">Chain Hook</li>
+              <li class="gemboxgem">Cleave</li>
+              <li class="gemboxgem">Consecrated Path</li>
+              <li class="gemboxgem">Corrupting Fever</li>
+              <li class="gemboxgem">Decoy Totem</li>
+              <li class="gemboxgem">Defiance Banner</li>
+              <li class="gemboxgem">Determination</li>
+              <li class="gemboxgem">Devouring Totem</li>
+              <li class="gemboxgem">Dominating Blow</li>
+              <li class="gemboxgem">Dread Banner</li>
+              <li class="gemboxgem">Earthquake</li>
+              <li class="gemboxgem">Earthshatter</li>
+              <li class="gemboxgem">Enduring Cry</li>
+              <li class="gemboxgem">Exsanguinate</li>
+              <li class="gemboxgem">Flame Link</li>
+              <li class="gemboxgem">Flesh And Stone</li>
+              <li class="gemboxgem">Generals Cry</li>
+              <li class="gemboxgem">Glacial Hammer</li>
+              <li class="gemboxgem">Ground Slam</li>
+              <li class="gemboxgem">Heavy Strike</li>
+              <li class="gemboxgem">Herald Of Ash</li>
+              <li class="gemboxgem">Herald Of Purity</li>
+              <li class="gemboxgem">Holy Flame Totem</li>
+              <li class="gemboxgem">Ice Crash</li>
+              <li class="gemboxgem">Immortal Call</li>
+              <li class="gemboxgem">Infernal Blow</li>
+              <li class="gemboxgem">Infernal Cry</li>
+              <li class="gemboxgem">Intimidating Cry</li>
+              <li class="gemboxgem">Leap Slam</li>
+              <li class="gemboxgem">Molten Shell</li>
+              <li class="gemboxgem">Molten Strike</li>
+              <li class="gemboxgem">Perforate</li>
+              <li class="gemboxgem">Petrified Blood</li>
+              <li class="gemboxgem">Pride</li>
+              <li class="gemboxgem">Protective Link</li>
+              <li class="gemboxgem">Punishment</li>
+              <li class="gemboxgem">Purity Of Fire</li>
+              <li class="gemboxgem">Rage Vortex</li>
+              <li class="gemboxgem">Rallying Cry</li>
+              <li class="gemboxgem">Reap</li>
+              <li class="gemboxgem">Reckoning</li>
+              <li class="gemboxgem">Rejuvenation Totem</li>
+              <li class="gemboxgem">Searing Bond</li>
+              <li class="gemboxgem">Seismic Cry</li>
+              <li class="gemboxgem">Shield Charge</li>
+              <li class="gemboxgem">Shield Crush</li>
+              <li class="gemboxgem">Shockwave Totem</li>
+              <li class="gemboxgem">Smite</li>
+              <li class="gemboxgem">Static Strike</li>
+              <li class="gemboxgem">Steelskin</li>
+              <li class="gemboxgem">Summon Flame Golem</li>
+              <li class="gemboxgem">Summon Stone Golem</li>
+              <li class="gemboxgem">Sunder</li>
+              <li class="gemboxgem">Sweep</li>
+              <li class="gemboxgem">Tectonic Slam</li>
+              <li class="gemboxgem">Vengeance</li>
+              <li class="gemboxgem">Vigilant Strike</li>
+              <li class="gemboxgem">Vitality</li>
+              <li class="gemboxgem">Vulnerability</li>
+              <li class="gemboxgem">War Banner</li>
+              <li class="gemboxgem">Warlords Mark</li>
+              <li class="gemboxgem">Added Fire Damage Support</li>
+              <li class="gemboxgem">Ancestral Call Support</li>
+              <li class="gemboxgem">Arrogance Support</li>
+              <li class="gemboxgem">Ballista Totem Support</li>
+              <li class="gemboxgem">Behead Support</li>
+              <li class="gemboxgem">Bloodlust Support</li>
+              <li class="gemboxgem">Bloodthirst Support</li>
+              <li class="gemboxgem">Brutality Support</li>
+              <li class="gemboxgem">Burning Damage Support</li>
+              <li class="gemboxgem">Cast On Melee Kill Support</li>
+              <li class="gemboxgem">Cast When Damage Taken Support</li>
+              <li class="gemboxgem">Chance To Bleed Support</li>
+              <li class="gemboxgem">Cold To Fire Support</li>
+              <li class="gemboxgem">Cruelty Support</li>
+              <li class="gemboxgem">Damage On Full Life Support</li>
+              <li class="gemboxgem">Divine Blessing Support</li>
+              <li class="gemboxgem">Earthbreaker Support</li>
+              <li class="gemboxgem">Elemental Damage With Attacks Support</li>
+              <li class="gemboxgem">Empower Support</li>
+              <li class="gemboxgem">Endurance Charge On Melee Stun Support</li>
+              <li class="gemboxgem">Eternal Blessing Support</li>
+              <li class="gemboxgem">Fire Penetration Support</li>
+              <li class="gemboxgem">Fist Of War Support</li>
+              <li class="gemboxgem">Fortify Support</li>
+              <li class="gemboxgem">Generosity Support</li>
+              <li class="gemboxgem">Increased Duration Support</li>
+              <li class="gemboxgem">Inspiration Support</li>
+              <li class="gemboxgem">Iron Grip Support</li>
+              <li class="gemboxgem">Iron Will Support</li>
+              <li class="gemboxgem">Knockback Support</li>
+              <li class="gemboxgem">Less Duration Support</li>
+              <li class="gemboxgem">Life Gain On Hit Support</li>
+              <li class="gemboxgem">Life Leech Support</li>
+              <li class="gemboxgem">Lifetap Support</li>
+              <li class="gemboxgem">Maim Support</li>
+              <li class="gemboxgem">Melee Physical Damage Support</li>
+              <li class="gemboxgem">Melee Splash Support</li>
+              <li class="gemboxgem">Multiple Totems Support</li>
+              <li class="gemboxgem">Multistrike Support</li>
+              <li class="gemboxgem">Pulverise Support</li>
+              <li class="gemboxgem">Rage Support</li>
+              <li class="gemboxgem">Ruthless Support</li>
+              <li class="gemboxgem">Shockwave Support</li>
+              <li class="gemboxgem">Spell Totem Support</li>
+              <li class="gemboxgem">Stun Support</li>
+              <li class="gemboxgem">Urgent Orders Support</li>
+            </ul>
+          </div>
+        </div>
+        <div id="geminfo">
+          
+        </div>
+
+      </section>
       <footer>
-        <p>This project is maintained by <a href="http://github.com/orderedlist">Steve Smith</a></p>
         <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
       </footer>
     </div>

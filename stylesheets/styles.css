@@ -314,7 +314,7 @@ footer {
   right: 1em;
 }
 
-#searchbox {
+.searchbox {
   width: 70%;
   height: 2em;
   margin-bottom: 1em;
@@ -327,7 +327,7 @@ footer {
   padding: 1em;
 }
 
-#searchbox:focus {
+.searchbox:focus {
   border: 2px solid #555;
 }
 
@@ -356,7 +356,94 @@ footer {
   background: #555; 
 }
 
-
 .hide_section {
   display: none;
+}
+
+.gemnames {
+  margin-bottom: 1em;
+  padding: 0.5em;
+  position: relative;
+  font-size: 14px;
+}
+
+#redgems {
+  border: 3px solid rgba(255, 0, 0, 0.233);
+}
+
+#greengems {
+  border: 3px solid rgba(0, 128, 0, 0.233);
+}
+
+#bluegems {
+  border: 3px solid rgba(0, 0, 255, 0.233);
+}
+
+.gemheader {
+  font-weight: 500;
+  font-size: 15px;
+}
+
+.button-2 {
+  width: 20%;
+  background: white;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  height: 2em;
+  color: #444;
+  font-size: 14px;
+  border-style: solid;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+hr {
+  margin-top:0.5em;
+  margin-bottom: 0.5em;
+}
+
+.hide_allgems {
+  display: none;
+}
+
+#gemerror {
+  color: #cc3952;
+}
+
+.gemboxgems li {
+  list-style: none;
+  padding-bottom: 1px;
+}
+
+#gemboxdiv {
+  position: relative;
+
+}
+
+.gembox {
+  overflow: auto;
+  position: absolute;
+  height: 16em;
+
+}
+
+/* width */
+.gembox::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+.gembox::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+.gembox::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+/* Handle on hover */
+.gembox::-webkit-scrollbar-thumb:hover {
+  background: #555; 
 }
