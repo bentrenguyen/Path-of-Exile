@@ -22,12 +22,22 @@
         </a>
         
         <br>
+        
         <ul>
-          <li><a onclick="change_display('mapmodregex')">Map Mod Regex</a></li>
-          <li><a onclick="change_display('gemvendorregex')">Gem Vendor Regex</a></li>
-          <li><a onclick="change_display('gemcampaignlocation')">Gem Campaign Location</a></li>
-          <li><a onclick="change_display('gemlocationmanual')">Gem Location Manual</a></li>
+          <h3>Webapps</h3>
+          <li><a href="#mapmod" onclick="change_display('mapmodregex')">Map Mod Regex</a></li>
+          <li><a href="#gemregex" onclick="change_display('gemvendorregex')">Gem Vendor Regex</a></li>
+          <li><a href="#pobgems" onclick="change_display('gemcampaignlocation')">Gem Campaign Location</a></li>
+          <li><a href="#gemlocation" onclick="change_display('gemlocationmanual')">Gem Location Manual</a></li>
+          <li><a href="#flasks" onclick="change_display('flasks')">Flasks</a></li>
+          <li><a href="#expedition" onclick="change_display('expedition')">Expedition</a></li>
+          <li><a href="#amulet" onclick="change_display('amulet')">+1 Amulet</a></li>
+          <h3 class="h3_nontop">Old Websites & Projects</h3>
+          <li><a>PoE Hub</a></li>
+          <li><a>Build Price Checker</a></li>
+          <li><a>poe.ninja Modchecker</a></li>
         </ul>
+        
       </header>
       <section id="mapmodregex" class="hide_section">
         <h1>Map Mod Regex</h1>
@@ -69,7 +79,7 @@
             </div>
 
           </div>
-          <input type="text" id="searchbox" onkeyup="searchbox()" placeholder="Search for a modifier...">
+          <input type="text" class="searchbox" onkeyup="searchbox()" placeholder="Search for a modifier...">
 
           <div class="mapmods">
             <ul id="mapmod_ul">
@@ -333,8 +343,27 @@
             </ul>
           </div>
         </div>
+        <h3>Gem Info</h3>
         <div id="geminfo">
-          
+          <table id="geminfotable">
+            <colgroup>
+              <col id="gemInfoX" style="width:5%">
+              <col id="gemInfoName" style="width:25%">
+              <col id="gemInfoLvl" style="width:5%">
+              <col id="gemInfoVendor" style="width:30%">
+            </colgroup>
+            <thead>
+              <tr>
+                <th></th>
+                <th>Gem Name</th>
+                <th>Level</th>
+                <th>Vendor</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr></tr>
+            </tbody>
+          </table>
         </div>
 
       </section>

@@ -416,16 +416,13 @@ hr {
   padding-bottom: 1px;
 }
 
-#gemboxdiv {
-  position: relative;
-
-}
-
 .gembox {
   overflow: auto;
-  position: absolute;
   height: 16em;
+}
 
+#gemboxdiv {
+  margin-bottom: 2em;
 }
 
 /* width */
@@ -446,4 +443,13 @@ hr {
 /* Handle on hover */
 .gembox::-webkit-scrollbar-thumb:hover {
   background: #555; 
+}
+
+#geminfo {
+  overflow: auto;
+}
+
+.h3_nontop{
+  margin-bottom: 1em;
+  margin-top:1em;
 }

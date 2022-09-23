@@ -302,6 +302,42 @@ function gemsearchbox() {
     }
   }
 }
+/*
+import gemJson from "../Projects/PoEgems_Sentinel_2022-07-18.json" assert {type:'json'};
+var gemDict = {};
+gemJson.forEach(gemJsonExtract);
+function gemJsonExtract(gem) {
+  gemDict[gem.name] = [gem.level, gem.quests];
+}
+
+
+var gemlist = document.querySelector('.gembox');
+gemlist.addEventListener('click', function(ev) {
+  if (ev.target.tagName === 'LI') {
+    gemInfo = gem_to_quest[ev.target.textContent.toLowerCase()]
+    if (document.getElementById("substringbox").textContent == '') {
+      document.getElementById("substringbox").textContent = '"!' + substring + '"';
+    }
+    else if (ev.target.classList.contains('checked')) {
+      if (document.getElementById("substringbox").textContent.includes('|'+substring)) {
+        document.getElementById("substringbox").textContent = document.getElementById("substringbox").textContent.replace('|' + substring, '');
+      }
+      else if (document.getElementById("substringbox").textContent.includes(substring+'|')) {
+        document.getElementById("substringbox").textContent = document.getElementById("substringbox").textContent.replace(substring+ '|', '');
+      }
+      else {
+        document.getElementById("substringbox").textContent = '';
+      }
+    } else {
+      document.getElementById("substringbox").textContent = document.getElementById("substringbox").textContent.slice(0, -1)+ '|' + substring + '"';
+    }
+    ev.target.classList.toggle('checked');
+    document.getElementById("substringbox").classList.remove("copied");
+    document.getElementById("copybutton").textContent = "Copy"
+    update_length();
+  }
+}, false);
+*/
 
 /*
 */
