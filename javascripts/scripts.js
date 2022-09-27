@@ -203,7 +203,7 @@ function gem_to_substring(color, color_json, id) {
   document.getElementById(id).textContent = document.getElementById(id).textContent.slice(0, -1) + '"';
 }
 
-var curr_display = "gemlocationmanual"
+var curr_display = "flasks"
 function change_display(new_display) {
   var to_display = document.getElementById(new_display);
   var to_hide = document.getElementById(curr_display)
@@ -338,6 +338,7 @@ gemlist.addEventListener('click', function(ev) {
   }
 }, false);
 */
+
 
 /*
 */

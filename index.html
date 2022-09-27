@@ -32,6 +32,7 @@
           <li><a href="#flasks" onclick="change_display('flasks')">Flasks</a></li>
           <li><a href="#expedition" onclick="change_display('expedition')">Expedition</a></li>
           <li><a href="#amulet" onclick="change_display('amulet')">+1 Amulet</a></li>
+          <li><a href="#heist" onclick="change_display('heist')">Heist Rogue Items</a></li>
           <h3 class="h3_nontop">Old Websites & Projects</h3>
           <li><a>PoE Hub</a></li>
           <li><a>Build Price Checker</a></li>
@@ -216,7 +217,7 @@
           <div id="No Act">No Act<br></div>
         </div>
       </section>
-      <section id="gemlocationmanual">
+      <section id="gemlocationmanual" class="hide_section">
         <h1>Gem Location Manual</h1>
         <input type="text" class="searchbox" id="gemsearchbox" onkeyup="gemsearchbox()" placeholder="Search for a gem...">
         <div id="gemboxdiv">
@@ -367,6 +368,33 @@
         </div>
 
       </section>
+      <section id="flasks">
+        <h1>Flasks</h1>
+          <div id="substringboxbox">
+            <div id="substringbox" onchange="update_length()"></div>
+            <div id="lengthbox">
+              <label for="lengthtracker">length: </label>
+              <i id="lengthtracker">0</i>
+              <i>/50</i>
+              <i id="lengthtrackererror"></i>
+            </div>
+          </div>
+          <div class="buttondiv">
+            <button id="copybutton" class="button-1" onclick ="copy()">Copy</button>
+            <button id="resetbutton" class="button-1" onclick="reset()">Reset</button>
+          </div>
+
+          <br>
+          <input type="text" class="searchbox" onkeyup="searchbox()" placeholder="Search for a modifier...">
+
+          <div class="flaskmods">
+            <ul id="flaskprefixes">
+            </ul>
+            <p> break</p>
+            <ul id="flasksuffixes">
+            </ul>
+          </div>
+      </section>
       <footer>
         <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
       </footer>
@@ -374,5 +402,6 @@
     <script src="javascripts/scale.fix.js"></script>
     <script src="javascripts/scripts.js"></script>
     <script src="javascripts/pako.js"></script>
+    <script type ="module" src="javascripts/flasks.js"></script>
   </body>
 </html>
