@@ -55,7 +55,7 @@ a:hover small {
 }
 
 .wrapper {
-  width:860px;
+  width:80%;
   margin:0 auto;
 }
 
@@ -145,7 +145,6 @@ hr {
 
 footer {
   width:270px;
-
   bottom:50px;
   -webkit-font-smoothing:subpixel-antialiased;
 }
@@ -466,4 +465,37 @@ hr {
 
 .checked {
   background: #f5f3c1;
+}
+
+.flaskmods {
+  position: relative;
+}
+
+.flaskmods ul {
+  padding-left: 0;
+  background: rgb(225, 225, 225);
+}
+
+.flasklist {
+  position: absolute;
+  width: 45%;
+}
+
+.flasklist ol {
+  padding-left: 0;
+  margin-bottom: 0;
+  background: red;
+}
+
+
+#flaskprefixes {
+  left: 1em;
+}
+
+#flasksuffixes {
+  right: 1em;
+}
+
+.flaskmods p {
+  margin: 0px 0px 0px 0px;
 }
