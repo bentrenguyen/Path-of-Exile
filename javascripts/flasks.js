@@ -169,26 +169,60 @@ for (j = 0; j < flask_mods.length; j++) {
         if (document.getElementById("substringbox").textContent == '""') {
             document.getElementById("substringbox").textContent = "";
         }
+
+        update_length();
     })
 }
-/*
 
-substring = substring_json[ev.target.textContent.toLowerCase()]
-if (document.getElementById("substringbox").textContent == '') {
-  document.getElementById("substringbox").textContent = '"!' + substring + '"';
+function update_length() {
+    var substring_length = document.getElementById("substringbox").textContent.length;
+    document.getElementById("lengthtracker").textContent = substring_length;
+    if (substring_length > 50) {
+      document.getElementById("lengthbox").classList.add("length_error");
+      document.getElementById("lengthtrackererror").textContent = " - Error: string is too long";
+    } else {
+      document.getElementById("lengthbox").classList.remove("length_error");
+      document.getElementById("lengthtrackererror").textContent = "";
+    }
 }
-else if (ev.target.classList.contains('checked')) {
-  if (document.getElementById("substringbox").textContent.includes('|'+substring)) {
-    document.getElementById("substringbox").textContent = document.getElementById("substringbox").textContent.replace('|' + substring, '');
-  }
-  else if (document.getElementById("substringbox").textContent.includes(substring+'|')) {
-    document.getElementById("substringbox").textContent = document.getElementById("substringbox").textContent.replace(substring+ '|', '');
-  }
-  else {
+
+export function reset() {
+    document.querySelectorAll('.flaskmod').forEach(function(element) {
+        element.classList.remove('checked');
+    })
+    document.querySelectorAll('.collapsible').forEach(function(element){
+        element.classList.remove('checked');
+    })
     document.getElementById("substringbox").textContent = '';
-  }
-} else {
-  document.getElementById("substringbox").textContent = document.getElementById("substringbox").textContent.slice(0, -1)+ '|' + substring + '"';
+    document.getElementById("substringbox").classList.remove("copied");
+    document.getElementById("copybutton").textContent = "Copy"
+    update_length();
 }
+  
+export function copy() {
+    var copyText = document.getElementById("substringbox").textContent;
+    document.getElementById("substringbox").classList.add("copied");
+    document.getElementById("copybutton").textContent = "Copied!"
+    navigator.clipboard.writeText(copyText);
+}
+
+export function searchbox() {
+    var input, filter, ul, li, a, i, txtValue;
+    input = document.getElementById("searchbox");
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("flaskprefixes");
+    li = ul.getElementsByTagName('p');
+  
+    for (i = 0; i < li.length; i++) {
+      a = li[i]
+      txtValue = a.textContent || a.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        li[i].style.display = "";
+      } else {
+        li[i].style.display = "none";
+      }
+    }
+  }
+
 
 /* FLASKS - END */
