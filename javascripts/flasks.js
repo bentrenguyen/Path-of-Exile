@@ -42,14 +42,29 @@ var flask_suffixes = [
 flask_prefixes.forEach(add_flask_title, true);
 flask_suffixes.forEach(add_flask_title, false);
 
+var prefix_odd = true;
+var suffix_odd = true;
+
 function add_flask_title(elem) {
     var prefix = this.valueOf();
+    var entry = document.createElement('p');
     if (prefix) {
         var flask_affixes = document.getElementById("flaskprefixes");
+        if (prefix_odd) {
+            entry.classList.add("rowcolor1");
+        } else {
+            entry.classList.add("rowcolor2");
+        }
+        prefix_odd = !prefix_odd;
     } else {
         var flask_affixes = document.getElementById("flasksuffixes");
+        if (suffix_odd) {
+            entry.classList.add("rowcolor1");
+        } else {
+            entry.classList.add("rowcolor2");
+        }
+        suffix_odd = !suffix_odd;
     }
-    var entry = document.createElement('p');
     
     entry.classList.add("collapsible");
     entry.appendChild(document.createTextNode(elem));

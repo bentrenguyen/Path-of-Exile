@@ -57,6 +57,7 @@ a:hover small {
 .wrapper {
   width:80%;
   margin:0 auto;
+
 }
 
 blockquote {
@@ -145,7 +146,7 @@ hr {
 
 footer {
   width:270px;
-  bottom:50px;
+  bottom:0px;
   -webkit-font-smoothing:subpixel-antialiased;
 }
 
@@ -290,13 +291,6 @@ footer {
   color: #444;
 }
 
-.select_dropdown {
-  color:rgb(100, 100, 100);
-  width: 5em;
-  box-sizing: border-box;
-  border: 2px solid #ccc;
-  outline: none;
-}
 
 #inputdiv {
   position: relative;
@@ -332,10 +326,6 @@ footer {
   border: 2px solid #555;
 }
 
-.mapmods {
-  height: 35em;
-  overflow: auto;
-}
 
 /* width */
 .mapmods::-webkit-scrollbar {
@@ -361,29 +351,6 @@ footer {
   display: none;
 }
 
-.gemnames {
-  margin-bottom: 1em;
-  padding: 0.5em;
-  position: relative;
-  font-size: 14px;
-}
-
-#redgems {
-  border: 3px solid rgba(255, 0, 0, 0.233);
-}
-
-#greengems {
-  border: 3px solid rgba(0, 128, 0, 0.233);
-}
-
-#bluegems {
-  border: 3px solid rgba(0, 0, 255, 0.233);
-}
-
-.gemheader {
-  font-weight: 500;
-  font-size: 15px;
-}
 
 .button-2 {
   width: 20%;
@@ -404,52 +371,6 @@ hr {
   margin-bottom: 0.5em;
 }
 
-.hide_allgems {
-  display: none;
-}
-
-#gemerror {
-  color: #cc3952;
-}
-
-.gemboxgems li {
-  list-style: none;
-  padding-bottom: 1px;
-}
-
-.gembox {
-  overflow: auto;
-  height: 16em;
-}
-
-#gemboxdiv {
-  margin-bottom: 2em;
-}
-
-/* width */
-.gembox::-webkit-scrollbar {
-  width: 10px;
-}
-
-/* Track */
-.gembox::-webkit-scrollbar-track {
-  background: #f1f1f1; 
-}
- 
-/* Handle */
-.gembox::-webkit-scrollbar-thumb {
-  background: #888; 
-}
-
-/* Handle on hover */
-.gembox::-webkit-scrollbar-thumb:hover {
-  background: #555; 
-}
-
-#geminfo {
-  overflow: auto;
-}
-
 .h3_nontop{
   margin-bottom: 1em;
   margin-top:1em;
@@ -464,7 +385,7 @@ hr {
 }
 
 .checked {
-  background: #f5f3c1;
+  font-weight: bold;
 }
 
 .flaskmods {
@@ -473,23 +394,27 @@ hr {
 
 .flaskmods ul {
   padding-left: 0;
-  background: rgb(225, 225, 225);
 }
 
 .flasklist {
   position: absolute;
   width: 45%;
+  padding-bottom: 5em;
+  margin-bottom: 1em;
 }
 
 .flasklist ol {
-  padding-left: 0;
+  padding: 0.2em 0.2em 0.2em 1.6em;
   margin-bottom: 0;
-  background: red;
+  background: #e8e9eb;
+  border-bottom: 0.25px solid rgb(160, 160, 160);
 }
+
 
 
 #flaskprefixes {
   left: 1em;
+
 }
 
 #flasksuffixes {
@@ -498,4 +423,20 @@ hr {
 
 .flaskmods p {
   margin: 0px 0px 0px 0px;
+  padding-left: 1em;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  padding-right: 0.2em;
+}
+
+.flasklist p {
+  border-bottom: 0.25px solid rgb(160, 160, 160);
+}
+
+.flaskmods li:hover {
+  cursor: pointer;
+}
+
+.flasklist p:hover {
+  cursor: pointer;
 }
