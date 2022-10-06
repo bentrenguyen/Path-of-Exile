@@ -25,14 +25,17 @@
         
         <ul>
           <h3>Webapps</h3>
-          <li><a href="#mapmod" onclick="change_display('mapmodregex')">Map Mod Regex</a></li>
+          <li><a href="#mapmod" onclick="change_display('mapmod')">Map Mod Regex</a></li>
+          <li><a href="#flasks" onclick="change_display('flasks')">Flask Rolling</a></li>
           <li><a href="#gemregex" onclick="change_display('gemvendorregex')">Gem Vendor Regex</a></li>
           <li><a href="#pobgems" onclick="change_display('gemcampaignlocation')">Gem Campaign Location</a></li>
           <li><a href="#gemlocation" onclick="change_display('gemlocationmanual')">Gem Location Manual</a></li>
-          <li><a href="#expedition" onclick="change_display('expedition')">Expedition</a></li>
-          <li><a href="#flasks" onclick="change_display('flasks')">Flasks</a></li>
+          
+          <h3 class="h3_nontop">Coming Soon</h3>
           <li><a href="#amulet" onclick="change_display('amulet')">Amulet</a></li>
           <li><a href="#heist" onclick="change_display('heist')">Heist Rogue Items</a></li>
+          <li><a href="#expedition" onclick="change_display('expedition')">Expedition</a></li>
+
           <h3 class="h3_nontop">Old Websites & Projects</h3>
           <li><a>PoE Hub</a></li>
           <li><a>Build Price Checker</a></li>
@@ -40,7 +43,7 @@
         </ul>
         
       </header>
-      <section id="mapmodregex">
+      <section id="mapmod" class="hide_section">
         <h1>Map Mod Regex</h1>
           <div class="substringboxbox">
             <div id="substringboxmapmod" class="substringbox" onchange="update_length('map')"></div>
@@ -368,31 +371,33 @@
         </div>
 
       </section>
-      <section id="flasks" class="hide_section">
+      <section id="flasks">
         <h1>Flasks</h1>
           <div class="substringboxbox">
-          <div id="substringbox" onchange="update_length()"></div>
-            <div id="lengthbox">
-              <label for="lengthtracker">length: </label>
-              <i id="lengthtracker">0</i>
+            <div id="substringboxflasks" class="substringbox" onchange="update_length('flasks')"></div>
+            <div id="lengthboxflasks" class="lengthbox">
+              <label for="lengthtrackerflasks">length: </label>
+              <i id="lengthtrackerflasks" class="lengthtracker">0</i>
               <i>/50</i>
-              <i id="lengthtrackererror"></i>
-          </div>
-          </div>
-          <div class="buttondiv">
-            <button id="copybutton" class="button-1" onclick ="copy()">Copy</button>
-            <button id="resetbutton" class="button-1" onclick="reset()">Reset</button>
+              <i id="lengthtrackererrorflasks" class="lengthtrackererror"></i>
+            </div>
           </div>
 
-          <br>
-          <input type="text" class="searchbox" onkeyup="searchbox()" placeholder="Search for a modifier...">
+          <div class="buttondiv">
+            <button id="copybuttonflasks" class="copybutton button-1" onclick ="copy('flasks')">Copy</button>
+            <button id="resetbuttonflasks" class="resetbutton button-1" onclick="reset('flasks')">Reset</button>
+          </div>
+
+          <input type="text" id="searchboxflasks" class="searchbox" onkeyup="searchboxflasks('flasks')" placeholder="Search for a modifier...">
 
           <div class="flaskmods">
-            <ul id="flaskprefixes">
-            </ul>
-            <p> break</p>
-            <ul id="flasksuffixes">
-            </ul>
+            
+            <div class="flasklist" id="flaskprefixes">
+              <h3 id="flasktitleprefix" class="flasktitle">Prefixes</h3>
+            </div>
+            <div class="flasklist" id="flasksuffixes">
+              <h3 id="flasktitlesuffix" class="flasktitle">Suffixes</h3>
+            </div>
           </div>
       </section>
       <footer>
@@ -400,8 +405,10 @@
       </footer>
     </div>
     <script src="javascripts/scale.fix.js"></script>
-    <script src="javascripts/scripts.js"></script>
+    <script type="module" src="javascripts/scripts.js"></script>
     <script src="javascripts/pako.js"></script>
-    <script type ="module" src="javascripts/flasks.js"></script>
+
+    <script src="javascripts/gems.js"></script>
+    <script type="module" src="javascripts/scripts_imports.js"></script>
   </body>
 </html>

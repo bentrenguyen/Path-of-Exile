@@ -460,3 +460,89 @@ hr {
   margin-top:1em;
 }
 
+.flaskmods li {
+  list-style: none;
+}
+
+.collapse {
+  display: none;
+}
+
+.checked {
+  font-weight: bold;
+}
+
+
+.flaskmods ul {
+  padding-left: 0;
+}
+
+.flasklist {
+}
+
+.flasklist ol {
+  padding: 0.2em 0.2em 0.2em 1.6em;
+  margin-bottom: 0;
+  background: #e8e9eb;
+  border-bottom: 0.25px solid rgb(190, 190, 190);
+}
+
+
+
+.flaskmods p {
+  margin: 0px 0px 0px 0px;
+  padding-left: 1em;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  padding-right: 0.2em;
+}
+
+.flasklist p {
+  border-bottom: 0.25px solid rgb(190, 190, 190);
+}
+
+.flaskmods li:hover {
+  cursor: pointer;
+}
+
+.flasklist p:hover {
+  cursor: pointer;
+}
+
+#searchboxflasks {
+  margin-top: 1em;
+}
+
+.flasktitle {
+  margin-bottom: 0.25em;
+  padding-bottom: 0;
+}
+
+#flasktitlesuffix {
+  margin-top: 1em;
+}
+
+.flaskmods {
+  height: 38em;
+  overflow: auto;
+}
+
+/* width */
+.flaskmods::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+.flaskmods::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+.flaskmods::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+/* Handle on hover */
+.flaskmods::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
