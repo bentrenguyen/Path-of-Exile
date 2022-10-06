@@ -5,6 +5,7 @@ var list = document.querySelector('.mapmods');
 list.addEventListener('click', function(ev) {
   if (ev.target.tagName === 'LI') {
     substring = substring_json[ev.target.textContent.toLowerCase()]
+    var substringbox = "substringbox" + curr_display;
     if (document.getElementById("substringbox").textContent == '') {
       document.getElementById("substringbox").textContent = '"!' + substring + '"';
     }
@@ -28,7 +29,8 @@ list.addEventListener('click', function(ev) {
   }
 }, false);
 
-function reset() {
+function reset(page_name) {
+  
   document.querySelectorAll('.mapmod').forEach(function(element) {
     element.classList.remove('checked');
   })
@@ -203,7 +205,7 @@ function gem_to_substring(color, color_json, id) {
   document.getElementById(id).textContent = document.getElementById(id).textContent.slice(0, -1) + '"';
 }
 
-var curr_display = "flasks"
+var curr_display = "mapmod"
 function change_display(new_display) {
   var to_display = document.getElementById(new_display);
   var to_hide = document.getElementById(curr_display)

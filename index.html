@@ -29,9 +29,9 @@
           <li><a href="#gemregex" onclick="change_display('gemvendorregex')">Gem Vendor Regex</a></li>
           <li><a href="#pobgems" onclick="change_display('gemcampaignlocation')">Gem Campaign Location</a></li>
           <li><a href="#gemlocation" onclick="change_display('gemlocationmanual')">Gem Location Manual</a></li>
-          <li><a href="#flasks" onclick="change_display('flasks')">Flasks</a></li>
           <li><a href="#expedition" onclick="change_display('expedition')">Expedition</a></li>
-          <li><a href="#amulet" onclick="change_display('amulet')">+1 Amulet</a></li>
+          <li><a href="#flasks" onclick="change_display('flasks')">Flasks</a></li>
+          <li><a href="#amulet" onclick="change_display('amulet')">Amulet</a></li>
           <li><a href="#heist" onclick="change_display('heist')">Heist Rogue Items</a></li>
           <h3 class="h3_nontop">Old Websites & Projects</h3>
           <li><a>PoE Hub</a></li>
@@ -40,22 +40,22 @@
         </ul>
         
       </header>
-      <section id="mapmodregex" class="hide_section">
+      <section id="mapmodregex">
         <h1>Map Mod Regex</h1>
-          <div id="substringboxbox">
-            <div id="substringbox" onchange="update_length()"></div>
-            <div id="lengthbox">
-              <label for="lengthtracker">length: </label>
-              <i id="lengthtracker">0</i>
+          <div class="substringboxbox">
+            <div id="substringboxmapmod" class="substringbox" onchange="update_length('map')"></div>
+            <div id="lengthboxmapmod" class="lengthbox">
+              <label for="lengthtrackermapmod">length: </label>
+              <i id="lengthtrackermapmod" class="lengthtracker">0</i>
               <i>/50</i>
-              <i id="lengthtrackererror"></i>
+              <i id="lengthtrackererrormapmod" class="lengthtrackererror"></i>
             </div>
           </div>
           <div class="buttondiv">
-            <button id="copybutton" class="button-1" onclick ="copy()">Copy</button>
-            <button id="resetbutton" class="button-1" onclick="reset()">Reset</button>
+            <button id="copybuttonmapmod" class="copybutton button-1" onclick ="copy('mapmod')">Copy</button>
+            <button id="resetbuttonmapmod" class="resetbutton button-1" onclick="reset('mapmod')">Reset</button>
           </div>
-          <div id="inputdiv">
+          <div id="inputdivmapmod" class="inputdiv">
             <div id="quantdiv">
               <label class="boxlabel" for="quantselect">Minimum Quantity </label>
               <select id="quantselect" class="select_dropdown" onchange="select_dropdown('quant')">
@@ -80,7 +80,7 @@
             </div>
 
           </div>
-          <input type="text" class="searchbox" onkeyup="searchbox()" placeholder="Search for a modifier...">
+          <input type="text" id="searchboxmapmod" class="searchbox" onkeyup="searchbox('mapmod')" placeholder="Search for a modifier...">
 
           <div class="mapmods">
             <ul id="mapmod_ul">
@@ -368,16 +368,16 @@
         </div>
 
       </section>
-      <section id="flasks">
+      <section id="flasks" class="hide_section">
         <h1>Flasks</h1>
-          <div id="substringboxbox">
-            <div id="substringbox" onchange="update_length()"></div>
+          <div class="substringboxbox">
+          <div id="substringbox" onchange="update_length()"></div>
             <div id="lengthbox">
               <label for="lengthtracker">length: </label>
               <i id="lengthtracker">0</i>
               <i>/50</i>
               <i id="lengthtrackererror"></i>
-            </div>
+          </div>
           </div>
           <div class="buttondiv">
             <button id="copybutton" class="button-1" onclick ="copy()">Copy</button>

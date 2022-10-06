@@ -187,11 +187,13 @@ function update_length() {
 }
 
 export function reset() {
+    collapse_all();
     document.querySelectorAll('.flaskmod').forEach(function(element) {
         element.classList.remove('checked');
     })
     document.querySelectorAll('.collapsible').forEach(function(element){
         element.classList.remove('checked');
+        element.classList.remove('active');
     })
     document.getElementById("substringbox").textContent = '';
     document.getElementById("substringbox").classList.remove("copied");
@@ -207,22 +209,47 @@ export function copy() {
 }
 
 export function searchbox() {
-    var input, filter, ul, li, a, i, txtValue;
+    var input, filter, ul1, ul2, li1, li2, a, i, txtValue;
     input = document.getElementById("searchbox");
     filter = input.value.toUpperCase();
-    ul = document.getElementById("flaskprefixes");
-    li = ul.getElementsByTagName('p');
-  
-    for (i = 0; i < li.length; i++) {
-      a = li[i]
-      txtValue = a.textContent || a.innerText;
-      if (txtValue.toUpperCase().indexOf(filter) > -1) {
-        li[i].style.display = "";
-      } else {
-        li[i].style.display = "none";
-      }
-    }
-  }
+    ul1 = document.getElementById("flaskprefixes");
+    ul2 = document.getElementById("flasksuffixes");
+    li1 = ul1.getElementsByTagName('p');
+    li2 = ul2.getElementsByTagName('p');
+    var lists = [li1, li2];
+
+    lists.forEach(function(li){
+        for (i = 0; i < li.length; i++) {
+            a = li[i]
+            txtValue = a.textContent || a.innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+              li[i].style.display = "";
+            } else {
+              li[i].style.display = "none";
+            }
+          }
+    })
+
+    collapse_all();
+}
+
+function collapse_all() {
+    document.querySelectorAll('.collapsible').forEach(function(element){
+        if (element.classList.contains('active')) {
+            var content = element.nextElementSibling;
+            content.style.display = "none";
+        }
+    })
+}
 
 
 /* FLASKS - END */
+
+/* IDEAS TO ADD:
+
+-life mana hybrid utility flask dropdown
+-table to include weights, ilvl, tier#
+-include mod name somehow (ex. Flagellant, of the Armadillo, etc.)
+-figure out footer formatting
+
+*/

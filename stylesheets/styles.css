@@ -1,3 +1,5 @@
+/* THEME CSS */
+
 body {
   background-color: #fff;
   padding:50px;
@@ -223,7 +225,9 @@ footer {
   }
 }
 
-/* added */
+/* THEME CSS END */
+
+/* MAPMOD */
 .mapmods li {
   list-style: none;
   padding-bottom: 1px;
@@ -233,7 +237,7 @@ footer {
   background: #f5f3c1
 }
 
-#substringboxbox {
+.substringboxbox {
   background: #e8e9eb;
   height: 4em;
   margin-bottom: 1em;
@@ -250,7 +254,7 @@ footer {
   color: #cc3952;
 }
 
-#lengthbox {
+.lengthbox {
   font-size: 14px;
   position: absolute;
   bottom: 1em;
@@ -275,12 +279,12 @@ footer {
 }
 
 
-#copybutton {
+.copybutton {
   left: 1em;
   border-color: #33cc75;
 }
 
-#resetbutton {
+.resetbutton {
   border-color: #cc3952;
   right: 1em;
 }
@@ -297,7 +301,7 @@ footer {
   outline: none;
 }
 
-#inputdiv {
+.inputdiv {
   position: relative;
   padding: 0.5em;
   margin-top: 0.5em;
@@ -355,6 +359,8 @@ footer {
 .mapmods::-webkit-scrollbar-thumb:hover {
   background: #555; 
 }
+
+/* MAPMOD END*/
 
 .hide_section {
   display: none;
