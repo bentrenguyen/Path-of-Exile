@@ -28,16 +28,14 @@
           <li><a href="#mapmod" onclick="change_display('mapmod')">Map Mod Regex</a></li>
           <li><a href="#flasks" onclick="change_display('flasks')">Flask Rolling</a></li>
           <li><a href="#gemregex" onclick="change_display('gemvendorregex')">Gem Vendor Regex</a></li>
-          <li><a href="#pobgems" onclick="change_display('gemcampaignlocation')">Gem Campaign Location</a></li>
-          <li><a href="#gemlocation" onclick="change_display('gemlocationmanual')">Gem Location Manual</a></li>
+          <li><a href="#gemlocation" onclick="change_display('gemvendorlocation')">Gem Vendor Location</a></li>
           
           <h3 class="h3_nontop">Coming Soon</h3>
           <li><a href="#amulet" onclick="change_display('amulet')">Amulet</a></li>
           <li><a href="#heist" onclick="change_display('heist')">Heist Rogue Items</a></li>
-          <li><a href="#expedition" onclick="change_display('expedition')">Expedition</a></li>
 
           <h3 class="h3_nontop">Old Websites & Projects</h3>
-          <li><a>PoE Hub</a></li>
+          <li><a href="./Projects/PoE Hub/index.html">PoE Hub</a></li>
           <li><a>Build Price Checker</a></li>
           <li><a>poe.ninja Modchecker</a></li>
         </ul>
@@ -172,31 +170,31 @@
       </section>
       <section id="gemvendorregex" class="hide_section">
         <h1>Gem Vendor Regex</h1>
-        <h3>Generate Regex from Path of Building export code</h3>
+        <h3>Generate regex from Path of Building export code to quickly buy gems from Lilly</h3>
         <input type="text" id="test" placeholder="Paste PoB code here"/>
         <button id="testbutton" onclick="decode()">Import</button>
         <br>
         <br>
         <div id="gemerror"></div>
-        <div id="allgems" class="hide_allgems">
+        <div id="allgems">
           <div id="redgems" class="gemnames">
             <div class="gemheader">Red Gems</div>
             <div id="redgemnames"></div>
-            <hr>
+            <hr class="gemline">
             <div id="redgemssubstring" class="gemsubstring"></div>
             <button id="redcopygem" class="button-2" onclick ="copygem('red')">Copy</button>
           </div>
           <div id="greengems" class="gemnames">
             <div class="gemheader">Green Gems</div>
             <div id="greengemnames"></div>
-            <hr>
+            <hr class="gemline">
             <div id="greengemssubstring" class="gemsubstring"></div>
             <button id="greencopygem" class="button-2" onclick ="copygem('green')">Copy</button>
           </div> 
           <div id="bluegems" class="gemnames">
             <div class="gemheader">Blue Gems</div>
             <div id="bluegemnames"></div>
-            <hr>
+            <hr class="gemline">
             <div id="bluegemssubstring" class="gemsubstring"></div>
             <button id="bluecopygem" class="button-2" onclick ="copygem('blue')">Copy</button>
           </div>
@@ -204,8 +202,8 @@
       </section>
       <section id="gemcampaignlocation" class="hide_section">
         <h1>Gem Campaign Location</h1>
-        <input type="text" id="gemcampaignb64" placeholder="Paste PoB code here"/>
-        <button id="testbutton2" onclick="decode2()">Import</button>
+        <input type="text" id="1gemcampaignb64" placeholder="Paste PoB code here"/>
+        <button id="1testbutton2" onclick="decode2()">Import</button>
         <br>
         <input type="checkbox" id="siosa_check" name="siosa_check" onclick="siosa_checked()">
         <label for="siosa_check">Library quest completed?</label>
@@ -220,8 +218,14 @@
           <div id="No Act">No Act<br></div>
         </div>
       </section>
-      <section id="gemlocationmanual" class="hide_section">
-        <h1>Gem Location Manual</h1>
+      <section id="gemvendorlocation">
+        <h1>Gem Vendor Location</h1>
+        <h3 class="h3gemlocation">Enter your PoB export code here </h3>
+        <div class="importcode">
+          <input type="text" id="gemcampaignb64" placeholder="Paste PoB code here"/>
+          <button id="testbutton2" onclick="decode2()">Import</button>
+        </div>
+        <h3>OR Search for gems manually</h3>
         <input type="text" class="searchbox" id="gemsearchbox" onkeyup="gemsearchbox()" placeholder="Search for a gem...">
         <div id="gemboxdiv">
           <div class="gembox" id="gembox1"">
@@ -371,7 +375,7 @@
         </div>
 
       </section>
-      <section id="flasks">
+      <section id="flasks" class="hide_section">
         <h1>Flasks</h1>
           <div class="substringboxbox">
             <div id="substringboxflasks" class="substringbox" onchange="update_length('flasks')"></div>
@@ -401,7 +405,8 @@
           </div>
       </section>
       <footer>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist/minimal">orderedlist</a></small></p>
+        <p><small>Last updated 10/12/22</small></p>
       </footer>
     </div>
     <script src="javascripts/scale.fix.js"></script>

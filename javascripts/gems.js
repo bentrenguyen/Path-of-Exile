@@ -31,7 +31,7 @@ function decode() {
     gems.push(gem_name.toLowerCase().replace('awakened ', '').replace('vaal ', ''));
 
   }
-  document.getElementById('allgems').classList.toggle('hide_allgems');
+  //document.getElementById('allgems').classList.toggle('hide_allgems');
   document.getElementById('className').textContent = className;
   var red_gems = [], blue_gems = [], green_gems = [];
   for (i = 0; i <gems.length; i++) {

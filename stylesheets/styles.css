@@ -366,11 +366,14 @@ footer {
   display: none;
 }
 
+/* GEMS START */
+
 .gemnames {
   margin-bottom: 1em;
   padding: 0.5em;
   position: relative;
   font-size: 14px;
+  height: 13.5em;
 }
 
 #redgems {
@@ -390,6 +393,7 @@ footer {
   font-size: 15px;
 }
 
+
 .button-2 {
   width: 20%;
   background: white;
@@ -402,6 +406,10 @@ footer {
   border-style: solid;
   margin-top: 0.5em;
   margin-bottom: 0.5em;
+
+  position: absolute;
+  bottom: 0.5em;
+  left: 1em;
 }
 
 hr {
@@ -477,8 +485,6 @@ hr {
   padding-left: 0;
 }
 
-.flasklist {
-}
 
 .flasklist ol {
   padding: 0.2em 0.2em 0.2em 1.6em;
@@ -545,4 +551,16 @@ hr {
 /* Handle on hover */
 .flaskmods::-webkit-scrollbar-thumb:hover {
   background: #555; 
+}
+
+footer p {
+  margin-bottom: 0;
+}
+
+.h3gemlocation {
+  margin-bottom: 0.5em;
+}
+
+#gemcampaignb64 {
+  margin-bottom: 0.5em;
 }
