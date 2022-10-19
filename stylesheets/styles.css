@@ -336,8 +336,8 @@ footer {
 }
 
 .mapmods {
-  height: 35em;
   overflow: auto;
+  height: 55vh;
 }
 
 /* width */

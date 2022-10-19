@@ -1,6 +1,6 @@
 import mapmod_substring_json from "../assets/mapmods_to_substring.json" assert {type: "json"};
 
-var curr_display = "gemvendorlocation";
+var curr_display = "mapmod";
 
 export function change_display(new_display) {
   var to_display = document.getElementById(new_display);
