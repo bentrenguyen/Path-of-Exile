@@ -405,4 +405,3 @@ function collapse_all() {
 */
 
 /* FLASKS - END */
-

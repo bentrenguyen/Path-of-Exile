@@ -29,6 +29,8 @@
           <li><a href="#flasks" onclick="change_display('flasks')">Flask Rolling</a></li>
           <li><a href="#gemregex" onclick="change_display('gemvendorregex')">Gem Vendor Regex</a></li>
           <li><a href="#gemlocation" onclick="change_display('gemvendorlocation')">Gem Vendor Location</a></li>
+          <li><a href="#gemlocation" onclick="change_display('gemvendorlocation')">Gem Vendor Location</a></li>
+
           
           <h3 class="h3_nontop">Coming Soon</h3>
           <li><a href="#amulet" onclick="change_display('amulet')">Amulet</a></li>
@@ -43,127 +45,129 @@
       </header>
       <section id="mapmod">
         <h1>Map Mod Regex</h1>
-          <div class="substringboxbox">
-            <div id="substringboxmapmod" class="substringbox" onchange="update_length('map')"></div>
-            <div id="lengthboxmapmod" class="lengthbox">
-              <label for="lengthtrackermapmod">length: </label>
-              <i id="lengthtrackermapmod" class="lengthtracker">0</i>
-              <i>/50</i>
-              <i id="lengthtrackererrormapmod" class="lengthtrackererror"></i>
+          <div id="mapmodheader" class="sticky">
+            <div class="substringboxbox">
+              <div id="substringboxmapmod" class="substringbox" onchange="update_length('map')"></div>
+              <div id="lengthboxmapmod" class="lengthbox">
+                <label for="lengthtrackermapmod">length: </label>
+                <i id="lengthtrackermapmod" class="lengthtracker">0</i>
+                <i>/50</i>
+                <i id="lengthtrackererrormapmod" class="lengthtrackererror"></i>
+              </div>
             </div>
-          </div>
-          <div class="buttondiv">
-            <button id="copybuttonmapmod" class="copybutton button-1" onclick ="copy('mapmod')">Copy</button>
-            <button id="resetbuttonmapmod" class="resetbutton button-1" onclick="reset('mapmod')">Reset</button>
-          </div>
-          <div id="inputdivmapmod" class="inputdiv">
-            <div id="quantdiv">
-              <label class="boxlabel" for="quantselect">Minimum Quantity </label>
-              <select id="quantselect" class="select_dropdown" onchange="select_dropdown('quant')">
-                <option>Select</option>
-                <option>60</option>
-                <option>70</option>
-                <option>80</option>
-                <option>90</option>
-                <option>100</option>
-              </select>
+            <div class="buttondiv">
+              <button id="copybuttonmapmod" class="copybutton button-1" onclick ="copy('mapmod')">Copy</button>
+              <button id="resetbuttonmapmod" class="resetbutton button-1" onclick="reset('mapmod')">Reset</button>
             </div>
-            <div id="packsizediv">
-              <label class="boxlabel" for="packsizeselect">Minimum Pack Size </label>
-              <select id="packsizeselect" class="select_dropdown" onchange="select_dropdown('packsize')">
-                <option>Select</option>
-                <option>20</option>
-                <option>30</option>
-                <option>40</option>
-                <option>50</option>
-                <option>60</option>
-              </select>
+            <div id="inputdivmapmod" class="inputdiv">
+              <div id="quantdiv">
+                <label class="boxlabel" for="quantselect">Minimum Quantity </label>
+                <select id="quantselect" class="select_dropdown" onchange="select_dropdown('quant')">
+                  <option>Select</option>
+                  <option>60</option>
+                  <option>70</option>
+                  <option>80</option>
+                  <option>90</option>
+                  <option>100</option>
+                </select>
+              </div>
+              <div id="packsizediv">
+                <label class="boxlabel" for="packsizeselect">Minimum Pack Size </label>
+                <select id="packsizeselect" class="select_dropdown" onchange="select_dropdown('packsize')">
+                  <option>Select</option>
+                  <option>20</option>
+                  <option>30</option>
+                  <option>40</option>
+                  <option>50</option>
+                  <option>60</option>
+                </select>
+              </div>
+  
             </div>
-
+            <input type="text" id="searchboxmapmod" class="searchbox" onkeyup="searchbox('mapmod')" placeholder="Search for a modifier...">
           </div>
-          <input type="text" id="searchboxmapmod" class="searchbox" onkeyup="searchbox('mapmod')" placeholder="Search for a modifier...">
 
           <div class="mapmods">
             <ul id="mapmod_ul">
-              <li class='mapmod'>Monsters reflect X% of Elemental Damage</li>
-              <li class='mapmod'>Monsters reflect X% of Physical Damage</li>
-              <li class='mapmod'>Players cannot Regenerate Life, Mana or Energy Shield</li>
-              <li class='mapmod'>Cannot Leech from Monsters</li>
-              <li class='mapmod'>Players are Cursed with Temporal Chains</li>
-              <li class='mapmod'>-X% maximum Player Resistances</li>
-              <li class='mapmod'>Players have X% less Recovery Rate of Life and Energy Shield</li>
-              <li class='mapmod'>Monsters are Hexproof</li>
-              <li class='mapmod'>Unique Bosses are Possessed</li>
-              <li class='mapmod'>Players have X% reduced effect of Non-Curse Auras from Skills</li>
-              <li class='mapmod'>Players are Cursed with Enfeeble</li>
-              <li class='mapmod'>Monsters have X% increased Critical Strike Chance</li>
-              <li class='mapmod'>Unique Boss deals X% increased Damage</li>
-              <li class='mapmod'>X% increased Monster Damage</li>
-              <li class='mapmod'>Monsters deal X% extra Physical Damage as Cold</li>
-              <li class='mapmod'>Monsters deal X% extra Physical Damage as Fire</li>
-              <li class='mapmod'>Monsters deal X% extra Physical Damage as Lightning</li>
-              <li class='mapmod'>Area has patches of Shocked Ground which increase Damage taken by X%</li>
-              <li class='mapmod'>All Monster Damage from Hits always Ignites</li>
-              <li class='mapmod'>Monsters cannot be Stunned</li>
-              <li class='mapmod'>X% increased Monster Movement Speed X% increased Monster Attack Speed X% increased Monster Cast Speed</li>
-              <li class='mapmod'>Monsters have a X% chance to cause Elemental Ailments on Hit</li>
-              <li class='mapmod'>Monsters Poison on Hit</li>
-              <li class='mapmod'>Monsters' Action Speed cannot be modified to below base value Monsters cannot be Taunted</li>
-              <li class='mapmod'>Monsters have X% chance to Impale with Attacks</li>
-              <li class='mapmod'>Monsters have X% increased Area of Effect</li>
-              <li class='mapmod'>Area has patches of Consecrated Ground</li>
-              <li class='mapmod'>Monsters gain X% of Maximum Life as Extra Maximum Energy Shield</li>
-              <li class='mapmod'>Unique Boss has X% increased Life Unique Boss has X% increased Area of Effect</li>
-              <li class='mapmod'>X% more Monster Life</li>
-              <li class='mapmod'>Players cannot inflict Exposure</li>
-              <li class='mapmod'>+X% Monster Physical Damage Reduction</li>
-              <li class='mapmod'>+X% Monster Chaos Resistance +X% Monster Elemental Resistance</li>
-              <li class='mapmod'>X% less effect of Curses on Monsters</li>
-              <li class='mapmod'>Monsters have +X% chance to Suppress Spell Damage</li>
-              <li class='mapmod'>Players have X% reduced Chance to Block Players have X% less Armour</li>
-              <li class='mapmod'>Players have -X% to amount of Suppressed Spell Damage Prevented Monsters have X% increased Accuracy Rating</li>
-              <li class='mapmod'>Monsters have X% chance to Avoid Elemental Ailments</li>
-              <li class='mapmod'>Monsters take X% reduced Extra Damage from Critical Strikes</li>
-              <li class='mapmod'>Buffs on Players expire X% faster</li>
-              <li class='mapmod'>Players gain X% reduced Flask Charges</li>
-              <li class='mapmod'>Players have X% less Area of Effect</li>
-              <li class='mapmod'>Players have X% less Cooldown Recovery Rate</li>
-              <li class='mapmod'>Players have X% less Accuracy Rating</li>
-              <li class='mapmod'>Players are Cursed with Vulnerability</li>
-              <li class='mapmod'>Players are Cursed with Elemental Weakness</li>
-              <li class='mapmod'>Monsters' skills Chain 2 additional times</li>
-              <li class='mapmod'>Monsters fire 2 additional Projectiles</li>
-              <li class='mapmod'>Monsters have a X% chance to avoid Poison, Impale, and Bleeding</li>
-              <li class='mapmod'>Monsters gain an Endurance Charge on Hit</li>
-              <li class='mapmod'>Monsters gain a Frenzy Charge on Hit</li>
-              <li class='mapmod'>Monsters gain a Power Charge on Hit</li>
-              <li class='mapmod'>Monsters Blind on Hit</li>
-              <li class='mapmod'>Monsters Maim on Hit with Attacks</li>
-              <li class='mapmod'>Monsters Hinder on Hit with Spells</li>
-              <li class='mapmod'>Monsters steal Power, Frenzy and Endurance charges on Hit</li>
-              <li class='mapmod'>Area has patches of Burning Ground</li>
-              <li class='mapmod'>Area has patches of Chilled Ground</li>
-              <li class='mapmod'>Area has patches of desecrated ground</li>
-              <li class='mapmod'>Area is inhabited by Abominations</li>
-              <li class='mapmod'>Area is inhabited by Animals</li>
-              <li class='mapmod'>Area is inhabited by Demons</li>
-              <li class='mapmod'>Area is inhabited by Ghosts</li>
-              <li class='mapmod'>Area is inhabited by Goatmen</li>
-              <li class='mapmod'>Area is inhabited by Humanoids</li>
-              <li class='mapmod'>Area is inhabited by Cultists of Kitava</li>
-              <li class='mapmod'>Area is inhabited by Lunaris fanatics</li>
-              <li class='mapmod'>Area is inhabited by ranged monsters</li>
-              <li class='mapmod'>Area is inhabited by Skeletons</li>
-              <li class='mapmod'>Area is inhabited by Solaris fanatics</li>
-              <li class='mapmod'>Area is inhabited by Sea Witches and their Spawn</li>
-              <li class='mapmod'>Area is inhabited by Undead</li>
-              <li class='mapmod'>Area has increased monster variety</li>
-              <li class='mapmod'>Area is inhabited by 2 additional Rogue Exiles</li>
-              <li class='mapmod'>Area contains many Totems</li>
-              <li class='mapmod'>Rare Monsters each have a Nemesis Mod X% more Rare Monsters</li>
-              <li class='mapmod'>Area contains two Unique Bosses</li>
-              <li class='mapmod'>Magic Monster Packs each have a Bloodline Mod X% more Magic Monsters</li>
-              <li class='mapmod'>Slaying Enemies close together has a X% chance to attract monsters from Beyond</li>
+              <li class="mapmod">Monsters reflect X% of Elemental Damage</li>
+              <li class="mapmod">Monsters reflect X% of Physical Damage</li>
+              <li class="mapmod">Players cannot Regenerate Life, Mana or Energy Shield</li>
+              <li class="mapmod">Cannot Leech from Monsters</li>
+              <li class="mapmod">Players are Cursed with Temporal Chains</li>
+              <li class="mapmod">-X% maximum Player Resistances</li>
+              <li class="mapmod">Players have X% less Recovery Rate of Life and Energy Shield</li>
+              <li class="mapmod">Monsters are Hexproof</li>
+              <li class="mapmod">Unique Bosses are Possessed</li>
+              <li class="mapmod">Players have X% reduced effect of Non-Curse Auras from Skills</li>
+              <li class="mapmod">Players are Cursed with Enfeeble</li>
+              <li class="mapmod">Monsters have X% increased Critical Strike Chance</li>
+              <li class="mapmod">Unique Boss deals X% increased Damage</li>
+              <li class="mapmod">X% increased Monster Damage</li>
+              <li class="mapmod">Monsters deal X% extra Physical Damage as Cold</li>
+              <li class="mapmod">Monsters deal X% extra Physical Damage as Fire</li>
+              <li class="mapmod">Monsters deal X% extra Physical Damage as Lightning</li>
+              <li class="mapmod">Area has patches of Shocked Ground which increase Damage taken by X%</li>
+              <li class="mapmod">All Monster Damage from Hits always Ignites</li>
+              <li class="mapmod">Monsters cannot be Stunned</li>
+              <li class="mapmod">X% increased Monster Movement Speed X% increased Monster Attack Speed X% increased Monster Cast Speed</li>
+              <li class="mapmod">Monsters have a X% chance to cause Elemental Ailments on Hit</li>
+              <li class="mapmod">Monsters Poison on Hit</li>
+              <li class="mapmod">Monsters' Action Speed cannot be modified to below base value Monsters cannot be Taunted</li>
+              <li class="mapmod">Monsters have X% chance to Impale with Attacks</li>
+              <li class="mapmod">Monsters have X% increased Area of Effect</li>
+              <li class="mapmod">Area has patches of Consecrated Ground</li>
+              <li class="mapmod">Monsters gain X% of Maximum Life as Extra Maximum Energy Shield</li>
+              <li class="mapmod">Unique Boss has X% increased Life Unique Boss has X% increased Area of Effect</li>
+              <li class="mapmod">X% more Monster Life</li>
+              <li class="mapmod">Players cannot inflict Exposure</li>
+              <li class="mapmod">+X% Monster Physical Damage Reduction</li>
+              <li class="mapmod">+X% Monster Chaos Resistance +X% Monster Elemental Resistance</li>
+              <li class="mapmod">X% less effect of Curses on Monsters</li>
+              <li class="mapmod">Monsters have +X% chance to Suppress Spell Damage</li>
+              <li class="mapmod">Players have X% reduced Chance to Block Players have X% less Armour</li>
+              <li class="mapmod">Players have -X% to amount of Suppressed Spell Damage Prevented Monsters have X% increased Accuracy Rating</li>
+              <li class="mapmod">Monsters have X% chance to Avoid Elemental Ailments</li>
+              <li class="mapmod">Monsters take X% reduced Extra Damage from Critical Strikes</li>
+              <li class="mapmod">Buffs on Players expire X% faster</li>
+              <li class="mapmod">Players gain X% reduced Flask Charges</li>
+              <li class="mapmod">Players have X% less Area of Effect</li>
+              <li class="mapmod">Players have X% less Cooldown Recovery Rate</li>
+              <li class="mapmod">Players have X% less Accuracy Rating</li>
+              <li class="mapmod">Players are Cursed with Vulnerability</li>
+              <li class="mapmod">Players are Cursed with Elemental Weakness</li>
+              <li class="mapmod">Monsters' skills Chain 2 additional times</li>
+              <li class="mapmod">Monsters fire 2 additional Projectiles</li>
+              <li class="mapmod">Monsters have a X% chance to avoid Poison, Impale, and Bleeding</li>
+              <li class="mapmod">Monsters gain an Endurance Charge on Hit</li>
+              <li class="mapmod">Monsters gain a Frenzy Charge on Hit</li>
+              <li class="mapmod">Monsters gain a Power Charge on Hit</li>
+              <li class="mapmod">Monsters Blind on Hit</li>
+              <li class="mapmod">Monsters Maim on Hit with Attacks</li>
+              <li class="mapmod">Monsters Hinder on Hit with Spells</li>
+              <li class="mapmod">Monsters steal Power, Frenzy and Endurance charges on Hit</li>
+              <li class="mapmod">Area has patches of Burning Ground</li>
+              <li class="mapmod">Area has patches of Chilled Ground</li>
+              <li class="mapmod">Area has patches of desecrated ground</li>
+              <li class="mapmod">Area is inhabited by Abominations</li>
+              <li class="mapmod">Area is inhabited by Animals</li>
+              <li class="mapmod">Area is inhabited by Demons</li>
+              <li class="mapmod">Area is inhabited by Ghosts</li>
+              <li class="mapmod">Area is inhabited by Goatmen</li>
+              <li class="mapmod">Area is inhabited by Humanoids</li>
+              <li class="mapmod">Area is inhabited by Cultists of Kitava</li>
+              <li class="mapmod">Area is inhabited by Lunaris fanatics</li>
+              <li class="mapmod">Area is inhabited by ranged monsters</li>
+              <li class="mapmod">Area is inhabited by Skeletons</li>
+              <li class="mapmod">Area is inhabited by Solaris fanatics</li>
+              <li class="mapmod">Area is inhabited by Sea Witches and their Spawn</li>
+              <li class="mapmod">Area is inhabited by Undead</li>
+              <li class="mapmod">Area has increased monster variety</li>
+              <li class="mapmod">Area is inhabited by 2 additional Rogue Exiles</li>
+              <li class="mapmod">Area contains many Totems</li>
+              <li class="mapmod">Rare Monsters each have a Nemesis Mod X% more Rare Monsters</li>
+              <li class="mapmod">Area contains two Unique Bosses</li>
+              <li class="mapmod">Magic Monster Packs each have a Bloodline Mod X% more Magic Monsters</li>
+              <li class="mapmod">Slaying Enemies close together has a X% chance to attract monsters from Beyond</li>
               
             </ul>
           </div>

@@ -237,6 +237,7 @@ footer {
   background: #f5f3c1
 }
 
+
 .substringboxbox {
   background: #e8e9eb;
   height: 4em;
@@ -337,7 +338,6 @@ footer {
 
 .mapmods {
   overflow: auto;
-  height: 55vh;
 }
 
 /* width */
